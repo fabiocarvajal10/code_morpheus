@@ -1,20 +1,16 @@
-import { useState } from 'react'
-import { AppShell, SimpleGrid } from '@mantine/core'
-import LayoutNavBar from './components/NavBar'
+import { Grid, SimpleGrid } from '@mantine/core'
+import LayoutHeader from './components/Header'
 import { Outlet } from 'react-router-dom'
-
+import Shell from './components/AppShell'
+import './index.css'
 
 function App() {
   return (
-    <AppShell
-      padding="md"
-      fixed={true}
-      navbar={<LayoutNavBar />}
+    <Shell
+      Header={<LayoutHeader />}
     >
-      <SimpleGrid mx={{ base: 320, sm: 200 }} maw={{ base: "100% - 320px", sm: "100% - 200px" }}>
-        <Outlet />
-      </SimpleGrid>
-    </AppShell>
+      <Outlet />
+    </Shell>
   )
 }
 

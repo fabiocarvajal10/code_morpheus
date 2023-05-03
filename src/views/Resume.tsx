@@ -4,37 +4,39 @@ import avatarImg from '../assets/img/av.jpeg'
 import { IconBrandGithub, IconBrandLinkedin, IconBrandMedium, IconBrandTwitter, IconMedal } from '@tabler/icons-react'
 import PostEntry from '../components/PostEntry'
 import Tag from '../components/Tag'
+import useResponsive from '../hooks/useResponsive'
 
-function AboutView() {
+function ResumeView() {
+  const { isScreenSmallerThan } = useResponsive()
   return (
-    <Flex align="center" justify="center">
+    <Flex align="center">
       <Stack p="md" spacing="xs">
         <CardSection mb="0">
          <Center>
             <Stack spacing="sm">
               <Container>
-                <Avatar radius={100} size={128} src={avatarImg} />
+                <Avatar radius={100} size={250} src={avatarImg} />
               </Container>
               <Stack spacing={0}>
-                <Title order={4} align="center">
+                <Title order={4} color="dark" align="center">
                   {Content.name}
                 </Title>
-                <Text fz={21} fw={700} color="gray">
+                <Text fz={22} fw={700} color="gray">
                   {Content.title.split(' ').join(' - ')}
                 </Text>
               </Stack>
-              <Group position='apart' >
+              <Group position='center' spacing="lg">
                 <a href='https://www.linkedin.com/in/fabio-c-250055a4' target='_blank'>
-                  <IconBrandLinkedin />
+                  <IconBrandLinkedin size={28} />
                 </a>
                 <a href="https://twitter.com/Agent_Carvajal" target="_blank">
-                  <IconBrandTwitter />
+                  <IconBrandTwitter size={28}  />
                 </a>
                 <a href="https://github.com/fabiocarvajal10" target="_blank">
-                  <IconBrandGithub />
+                  <IconBrandGithub size={28} />
                 </a>
                 <a href="https://medium.com/@fabio.carvajal" target="_blank">
-                  <IconBrandMedium />
+                  <IconBrandMedium size={28} />
                 </a>
               </Group>
             </Stack>
@@ -42,9 +44,9 @@ function AboutView() {
         </CardSection>
         <CardSection mb="xs">
           <Paper p="sm" pt="0" radius="md">
-            <Title px="md" order={5}>Summary</Title>
+            <Title px="md" color="dark" order={3} mb="md">Summary</Title>
             <Center>
-              <Text px="md">
+              <Text px="md" size="xl">
                 {Content.summary}
               </Text>
             </Center>
@@ -53,7 +55,7 @@ function AboutView() {
         <CardSection>      
           <Stack>
             <Paper p="sm" radius="md">
-              <Title px="md" order={5}>Career Record</Title>
+              <Title px="md" color="dark" order={3} mb="md">Career Record</Title>
               {
                 Content.career.filter(record => Boolean(record.summary)).map((record, i) => (
                   <PostEntry 
@@ -66,11 +68,11 @@ function AboutView() {
                     summary={record.summary || undefined}
                   >
                     <>
-                      <Title my="sm" color="gray" order={6}>Accomplishments</Title>
-                      <List center  spacing="xs">
+                      <Title my="sm" color="gray" order={5}>Accomplishments</Title>
+                      <List center spacing="xs">
                         {record.accomplishments?.map((accomplishment) => (
                           <List.Item icon={<IconMedal />} key={accomplishment}>
-                            {accomplishment}
+                            <Text size={18}>{accomplishment}</Text>
                           </List.Item>
                         ))}
                       </List>
@@ -87,7 +89,7 @@ function AboutView() {
               }
             </Paper>
             <Paper p="sm" radius="md">
-              <Title px="md" order={5}>Previous Record</Title>
+              <Title px="md" order={4} mb="sm" color='dark'>Previous Experience</Title>
               {
                 Content.career.filter(record => !Boolean(record.summary)).map((record, i) => (
                   <PostEntry 
@@ -98,7 +100,7 @@ function AboutView() {
                     subtitleHref={record.href}
                     tag={record.years}
                   >
-                    <Grid>
+                    <Grid {...(isScreenSmallerThan.md ? {justify: 'center'} : {} )}>
                       {record.keywords?.split(' ').map(technology => (
                         <Tag key={technology}>
                           {technology}
@@ -116,4 +118,4 @@ function AboutView() {
   )
 }
 
-export default AboutView
+export default ResumeView

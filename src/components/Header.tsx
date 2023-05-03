@@ -4,7 +4,7 @@ import {
   IconMessages,
   IconDatabase,
 } from '@tabler/icons-react';
-import { Navbar, ThemeIcon, UnstyledButton, Group, Text } from '@mantine/core';
+import { ThemeIcon, UnstyledButton, Group, Text, Header, Flex, Title } from '@mantine/core';
 import Brand from './Brand';
 const data = [
   { icon: <IconGitPullRequest size="1rem" />, color: 'blue', label: 'About' },
@@ -24,7 +24,6 @@ function MainLink({ icon, color, label }: MainLinkProps) {
     <UnstyledButton
       sx={(theme) => ({
         display: 'block',
-        width: '100%',
         padding: theme.spacing.xs,
         borderRadius: theme.radius.sm,
         color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
@@ -35,31 +34,28 @@ function MainLink({ icon, color, label }: MainLinkProps) {
         },
       })}
     >
-      <Group>
+      <Flex gap={14} align="center">
         <ThemeIcon color={color} variant="light">
           {icon}
         </ThemeIcon>
-        <Text size="xl">{label}</Text>
-      </Group>
+        <Text size={24}>{label}</Text>
+      </Flex>
     </UnstyledButton>
   );
 }
 
-function LayoutNavBar() {
+function LayoutHeader() {
   return (
-    <Navbar width={{ base: 320, sm: 200 }}  p="xs">
-      <Navbar.Section mt="xs">
-        <Brand />
-      </Navbar.Section>
-      <Navbar.Section grow mt="md">
-        <div>
-          {data.map((link) => <MainLink {...link} key={link.label} />)}
-        </div>
-      </Navbar.Section>
-      <Navbar.Section>Footer</Navbar.Section>
-
-    </Navbar>
+    <Header px="xl" py="md" height="auto">
+      <Flex justify="space-between" align="center">
+        <Title order={4} color='dark'>Fabio C.</Title>
+        <Flex justify="space-between">
+        {data.map((link) => <MainLink {...link} key={link.label} />)}
+        </Flex>
+        <Title order={5} color='gray'>IPortfolio</Title>
+      </Flex>
+    </Header>
   )
 }
 
-export default LayoutNavBar
+export default LayoutHeader
