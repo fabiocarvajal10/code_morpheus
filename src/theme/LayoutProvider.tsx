@@ -5,6 +5,7 @@ import NunitoSanRegular from '../assets/fonts/NunitoSans-Regular.ttf'
 import RobotoCondensedBold from "../assets/fonts/RobotoCondensed-Bold.ttf"
 import Roboto from "../assets/fonts/Roboto-Regular.ttf"
 import PressStart2PRegular from "../assets/fonts/PressStart2P-Regular.ttf"
+import RobotoMono from '../assets/fonts/RobotoMono.ttf'
 import type { PrimaryColors } from "./color"
 
 
@@ -45,6 +46,12 @@ function CustomFonts() {
             src: `url('${RobotoCondensedBold}')`,
             fontWeight: 700,
             fontStyle: 'bold',
+          },
+        },
+        {
+          '@font-face': {
+            fontFamily: 'Roboto Mono',
+            src: `url('${RobotoMono}')`,
           },
         },
         {
