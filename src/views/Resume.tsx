@@ -6,6 +6,7 @@ import PostEntry from '../components/PostEntry'
 import Tag from '../components/Tag'
 import useResponsive from '../hooks/useResponsive'
 
+
 function ResumeView() {
   const { isScreenSmallerThan } = useResponsive()
   return (

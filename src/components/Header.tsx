@@ -1,16 +1,21 @@
 import {
-  IconGitPullRequest,
   IconAlertCircle,
-  IconMessages,
-  IconDatabase,
+  IconBook,
+  IconMenu2,
 } from '@tabler/icons-react';
-import { ThemeIcon, UnstyledButton, Group, Text, Header, Flex, Title } from '@mantine/core';
-import Brand from './Brand';
+import { ThemeIcon, UnstyledButton, Text, Header, Flex, Accordion } from '@mantine/core';
+import { Link } from 'react-router-dom';
+import useResponsive from '../hooks/useResponsive';
+import { IconPlayerPlay } from '@tabler/icons-react';
+import { IconBrain } from '@tabler/icons-react';
+import { IconClipboardCopy } from '@tabler/icons-react';
+import { ReactNode } from 'react';
 const data = [
-  { icon: <IconGitPullRequest size="1rem" />, color: 'blue', label: 'About' },
-  { icon: <IconAlertCircle size="1rem" />, color: 'teal', label: 'Blog' },
-  { icon: <IconMessages size="1rem" />, color: 'violet', label: 'Latest' },
-  { icon: <IconDatabase size="1rem" />, color: 'grape', label: 'PR' },
+  { icon: <IconAlertCircle size="1rem" />, color: 'violet', label: 'About', section: 'about' },
+  { icon: <IconClipboardCopy size="1rem" />, color: 'violet', label: 'Resume', section: 'resume' },
+  { icon: <IconPlayerPlay size="1rem" />, color: 'violet', label: 'Portfolio', section: 'portfolio' },
+  { icon: <IconBrain size="1rem" />, color: 'violet', label: 'Posts', section: 'posts' },
+  { icon: <IconBook size="1rem" />, color: 'violet', label: 'Manifesto', section: 'career-manifesto' },
 ];
 
 interface MainLinkProps {
@@ -20,11 +25,17 @@ interface MainLinkProps {
 }
 
 function MainLink({ icon, color, label }: MainLinkProps) {
+  const { isScreenSmallerThan } = useResponsive()
+  const smallerThanMd = isScreenSmallerThan.md
   return (
     <UnstyledButton
       sx={(theme) => ({
+        width: '100%',
         display: 'block',
-        padding: theme.spacing.xs,
+        paddingTop: theme.spacing.xs,
+        paddingBottom: theme.spacing.xs,
+        paddingLeft: smallerThanMd ? 0 : theme.spacing.xs,
+        paddingRight: smallerThanMd ? 0 : theme.spacing.xs,
         borderRadius: theme.radius.sm,
         color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
 
@@ -34,27 +45,57 @@ function MainLink({ icon, color, label }: MainLinkProps) {
         },
       })}
     >
-      <Flex gap={14} align="center">
-        <ThemeIcon color={color} variant="light">
-          {icon}
-        </ThemeIcon>
-        <Text size={24}>{label}</Text>
-      </Flex>
+      <Link to="google.com" style={{ textDecoration: 'none', color: "gray" }}>
+        <Flex gap={smallerThanMd ? 28 : 14} align="center">
+          <ThemeIcon color={color} variant="light">
+            {icon}
+          </ThemeIcon>
+          <Text size={smallerThanMd ? 32 : 24} ff="Roboto Mono" fw={400}>{label}</Text>
+        </Flex>
+      </Link>
     </UnstyledButton>
   );
 }
 
-function LayoutHeader() {
+interface ResponsiveMenuButtonProps {
+  children: ReactNode
+}
+
+const ResponsiveMenuButton = ({ children }: ResponsiveMenuButtonProps) => {
+  const { isScreenSmallerThan } = useResponsive()
+  const smallerThanMd = isScreenSmallerThan.md
   return (
-    <Header px="xl" py="md" height="auto">
-      <Flex justify="space-between" align="center">
-        <Title order={4} color='dark'>Fabio C.</Title>
-        <Flex justify="space-between">
-        {data.map((link) => <MainLink {...link} key={link.label} />)}
+    <Accordion chevron={null} styles={(smallerThanMd ? { content: { padding: 0} } : {})} >
+      <Accordion.Item value="menu">
+        <Accordion.Control><IconMenu2  size={55} /></Accordion.Control>
+        <Accordion.Panel px={0}>
+          {children}
+        </Accordion.Panel>
+      </Accordion.Item>
+    </Accordion>
+  );
+};
+
+function LayoutHeader() {
+  const { isScreenSmallerThan } = useResponsive()
+  const smallerThanMd = isScreenSmallerThan.md
+  const menuItems = data.map((link) => <MainLink {...link} key={link.label} />)
+  return (
+    <>
+      {!smallerThanMd && <Header px="xl" py="md" height="auto">
+        <Flex justify={"center"} align="center" >
+          <Flex justify="space-between" gap={24}>
+          {menuItems}
+          </Flex>
         </Flex>
-        <Title order={5} color='gray'>IPortfolio</Title>
-      </Flex>
-    </Header>
+      </Header>
+      }
+      {smallerThanMd && (
+          <ResponsiveMenuButton>
+            {menuItems}
+          </ResponsiveMenuButton>
+      )}
+    </>
   )
 }
 
