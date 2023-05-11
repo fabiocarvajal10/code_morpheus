@@ -74,7 +74,7 @@ const ResponsiveMenuButton = ({ children }: ResponsiveMenuButtonProps) => {
       </Accordion.Item>
     </Accordion>
   );
-};
+}
 
 function LayoutHeader() {
   const { isScreenSmallerThan } = useResponsive()
