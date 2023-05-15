@@ -1,13 +1,11 @@
-import { Flex } from '@mantine/core'
 import useResponsive from '../hooks/useResponsive'
+import WIP from '../components/WIP'
 
 
 function PortfolioView() {
   const { isScreenSmallerThan } = useResponsive()
   return (
-    <Flex align="center">
-      Portfolio
-    </Flex>
+    <WIP/>
   )
 }
 
