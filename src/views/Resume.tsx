@@ -9,6 +9,10 @@ import useResponsive from '../hooks/useResponsive'
 
 function ResumeView() {
   const { isScreenSmallerThan } = useResponsive()
+  const smallerThanXS = isScreenSmallerThan.xs
+  const smallerThanMd = isScreenSmallerThan.md
+  const ta = smallerThanXS ? 'center' : 'left'
+  const taDesc = smallerThanXS ? 'right' : 'left'
   return (
     <Flex align="center">
       <Stack p="md" spacing="xs">
@@ -22,7 +26,7 @@ function ResumeView() {
                 <Title order={4} color="dark" align="center">
                   {Content.name}
                 </Title>
-                <Text fz={22} fw={700} color="gray">
+                <Text fz={22} fw={700} ta="center" color="gray">
                   {Content.title.split(' ').join(' - ')}
                 </Text>
               </Stack>
@@ -45,9 +49,9 @@ function ResumeView() {
         </CardSection>
         <CardSection mb="xs">
           <Paper p="sm" pt="0" radius="md">
-            <Title px="md" color="dark" order={3} mb="md">Summary</Title>
+            <Title px={0} color="dark" order={3} mb="md" ta={ta}>Summary</Title>
             <Center>
-              <Text px="md" size="xl">
+              <Text px={0} size="xl" ta={taDesc}>
                 {Content.summary}
               </Text>
             </Center>
@@ -55,8 +59,8 @@ function ResumeView() {
         </CardSection>
         <CardSection>      
           <Stack>
-            <Paper p="sm" radius="md">
-              <Title px="md" color="dark" order={3} mb="md">Career Record</Title>
+            <Paper px="sm" py={0} radius="md">
+              {!smallerThanMd && <Title px={0} color="dark" order={3} mb="md" ta={ta}>Career Record</Title>}
               {
                 Content.career.filter(record => Boolean(record.summary)).map((record, i) => (
                   <PostEntry 
@@ -69,15 +73,15 @@ function ResumeView() {
                     summary={record.summary || undefined}
                   >
                     <>
-                      <Title my="sm" color="gray" order={5}>Accomplishments</Title>
-                      <List center spacing="xs">
+                      <Title my="sm" color="gray" order={5} ta={ta}>Accomplishments</Title>
+                      <List center spacing="xs" styles={{ root: { listStylePosition: smallerThanMd ? 'outside' : 'inside' } }}>
                         {record.accomplishments?.map((accomplishment) => (
-                          <List.Item icon={<IconMedal />} key={accomplishment}>
-                            <Text size={18}>{accomplishment}</Text>
+                          <List.Item icon={smallerThanXS ? null : <IconMedal />} key={accomplishment}>
+                            <Text size={18} ta={taDesc}>{smallerThanXS && '-'} {accomplishment}</Text>
                           </List.Item>
                         ))}
                       </List>
-                      <Grid>
+                      <Grid {...(smallerThanXS ? {justify: 'center'} : {} )}>
                           {record.keywords?.split(' ').map(technology => (
                             <Tag key={technology}>
                               {technology}
@@ -89,8 +93,8 @@ function ResumeView() {
                 ))
               }
             </Paper>
-            <Paper p="sm" radius="md">
-              <Title px="md" order={4} mb="sm" color='dark'>Previous Experience</Title>
+            <Paper px="sm" py={0} radius="md">
+              {!smallerThanMd && <Title px={0} order={4} mb="sm" color='dark' ta={ta}>Previous Experience</Title>}
               {
                 Content.career.filter(record => !Boolean(record.summary)).map((record, i) => (
                   <PostEntry 
@@ -101,7 +105,7 @@ function ResumeView() {
                     subtitleHref={record.href}
                     tag={record.years}
                   >
-                    <Grid {...(isScreenSmallerThan.md ? {justify: 'center'} : {} )}>
+                    <Grid {...(smallerThanMd ? {justify: 'center'} : {} )}>
                       {record.keywords?.split(' ').map(technology => (
                         <Tag key={technology}>
                           {technology}

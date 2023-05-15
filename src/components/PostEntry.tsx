@@ -22,14 +22,18 @@ function PostEntry({
   tag,
   onClick,
 }: PostEntryProps) {
-  const { isScreenSmallerThan, isScreenLargerThan } = useBreakpoints()
+  const { isScreenSmallerThan } = useBreakpoints()
+  const smallerThanXS = isScreenSmallerThan.xs
+  const smallerThanMD = isScreenSmallerThan.md
+  const ta = smallerThanXS ? 'center' : 'left'
+  const taDesc = smallerThanXS ? 'right' : 'left'
 
   const handleClick = () => {
     onClick && onClick(id)
   }
   return (
     <SimpleGrid mb="sm" onClick={handleClick}>
-      <Flex px="md" py="xs" gap="md" align="start">
+      <Flex px={0} py="xs" gap="md" align="start">
         {!isScreenSmallerThan.md && <div>
           <Badge color="blue" px="xs" mt={10} size="lg">
             {tag}
@@ -37,26 +41,26 @@ function PostEntry({
         </div>
         }
         <div style={{ overflow: "auto", width: "100%" }}>
-          <Flex align="center" gap={isScreenSmallerThan.md ? "xs" : "md"} mb="sm" direction={isScreenSmallerThan.md ? "column" : "row"}>
+          <Flex align="center" gap={smallerThanMD ? "xs" : "md"} mb="sm" direction={smallerThanMD ? "column" : "row"}>
             <Title order={4} color="gray" weight={500} ta="center" >
               {title}
             </Title>
-            {!isScreenSmallerThan.md && <Divider orientation="vertical" />}
-            {isScreenSmallerThan.md && <Divider w="100%" my={0} />}
+            {!smallerThanXS && <Divider orientation="vertical" />}
+            {smallerThanXS && <Divider w="100%" my={0} />}
             
             <a href={subtitleHref} target="_blank" style={{ textDecoration: "none" }}>
               <Text fz={28} fw={900} color="blue">
                 {subtitle}
               </Text>
             </a>
-            {isScreenSmallerThan.md && (
+            {smallerThanMD && (
               <Badge color="blue" px="xs" mt={10} size="lg">
                 {tag}
               </Badge>
             )}
           </Flex>
           {summary && (
-            <Text mt="xs" size="xl" align='justify' lh={1.2}>
+            <Text mt="xs" size="xl" align='justify' ta={taDesc} lh={1.2}>
               {summary}
             </Text>
           )}
