@@ -4,27 +4,30 @@ import {
   IconMenu2,
 } from '@tabler/icons-react';
 import { ThemeIcon, UnstyledButton, Text, Header, Flex, Accordion } from '@mantine/core';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import useResponsive from '../hooks/useResponsive';
 import { IconPlayerPlay } from '@tabler/icons-react';
 import { IconBrain } from '@tabler/icons-react';
 import { IconClipboardCopy } from '@tabler/icons-react';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
+import { useToggle } from '@mantine/hooks';
 const data = [
-  { icon: <IconAlertCircle size="1rem" />, color: 'violet', label: 'About', section: 'about' },
-  { icon: <IconClipboardCopy size="1rem" />, color: 'violet', label: 'Resume', section: 'resume' },
-  { icon: <IconPlayerPlay size="1rem" />, color: 'violet', label: 'Portfolio', section: 'portfolio' },
-  { icon: <IconBrain size="1rem" />, color: 'violet', label: 'Posts', section: 'posts' },
-  { icon: <IconBook size="1rem" />, color: 'violet', label: 'Manifesto', section: 'career-manifesto' },
+  { icon: <IconAlertCircle size="1rem" />, color: 'violet', label: 'About', href: '/about' },
+  { icon: <IconClipboardCopy size="1rem" />, color: 'violet', label: 'Resume', href: '/resume' },
+  { icon: <IconPlayerPlay size="1rem" />, color: 'violet', label: 'Portfolio', href: '/portfolio' },
+  { icon: <IconBrain size="1rem" />, color: 'violet', label: 'Posts', href: '/posts' },
+  { icon: <IconBook size="1rem" />, color: 'violet', label: 'Manifesto', href: '/manifesto' },
 ];
 
 interface MainLinkProps {
-  icon: React.ReactNode;
-  color: string;
-  label: string;
+  icon: React.ReactNode
+  color: string
+  label: string
+  href: string
+  active: boolean
 }
 
-function MainLink({ icon, color, label }: MainLinkProps) {
+function MainLink({ active, icon, color, label, href }: MainLinkProps) {
   const { isScreenSmallerThan } = useResponsive()
   const smallerThanMd = isScreenSmallerThan.md
   return (
@@ -38,14 +41,17 @@ function MainLink({ icon, color, label }: MainLinkProps) {
         paddingRight: smallerThanMd ? 0 : theme.spacing.xs,
         borderRadius: theme.radius.sm,
         color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
-
-        '&:hover': {
-          backgroundColor:
-            theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-        },
+        ...(active ? {
+          backgroundColor: theme.colors.gray[2],
+        } : {
+          '&:hover': {
+            backgroundColor:
+              theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+          },
+        }),
       })}
     >
-      <Link to="google.com" style={{ textDecoration: 'none', color: "gray" }}>
+      <Link to={href} style={{ textDecoration: 'none', color: "gray" }}>
         <Flex gap={smallerThanMd ? 28 : 14} align="center">
           <ThemeIcon color={color} variant="light">
             {icon}
@@ -54,7 +60,7 @@ function MainLink({ icon, color, label }: MainLinkProps) {
         </Flex>
       </Link>
     </UnstyledButton>
-  );
+  )
 }
 
 interface ResponsiveMenuButtonProps {
@@ -62,24 +68,33 @@ interface ResponsiveMenuButtonProps {
 }
 
 const ResponsiveMenuButton = ({ children }: ResponsiveMenuButtonProps) => {
+  const location = useLocation()
+  const [value, toggle] = useToggle(['close', 'open'])
   const { isScreenSmallerThan } = useResponsive()
   const smallerThanMd = isScreenSmallerThan.md
+  const handleClick = (val: string) => toggle(val)
+  
+  useEffect(() => {
+    toggle()
+  }, [location])
+
   return (
-    <Accordion chevron={null} styles={(smallerThanMd ? { content: { padding: 0} } : {})} >
-      <Accordion.Item value="menu">
+    <Accordion value={value} onChange={handleClick} chevron={null} styles={(smallerThanMd ? { content: { padding: 0} } : {})} >
+      <Accordion.Item value="open">
         <Accordion.Control><IconMenu2  size={55} /></Accordion.Control>
         <Accordion.Panel px={0}>
           {children}
         </Accordion.Panel>
       </Accordion.Item>
     </Accordion>
-  );
+  )
 }
 
 function LayoutHeader() {
   const { isScreenSmallerThan } = useResponsive()
+  const location = useLocation()
   const smallerThanMd = isScreenSmallerThan.md
-  const menuItems = data.map((link) => <MainLink {...link} key={link.label} />)
+  const menuItems = data.map((link) => <MainLink {...link} key={link.label} active={location.pathname === link.href} />)
   return (
     <>
       {!smallerThanMd && <Header px="xl" py="md" height="auto">
