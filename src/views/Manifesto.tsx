@@ -1,13 +1,11 @@
-import { Flex } from '@mantine/core'
 import useResponsive from '../hooks/useResponsive'
+import WIP from '../components/WIP'
 
 
 function ManifestoView() {
   const { isScreenSmallerThan } = useResponsive()
   return (
-    <Flex align="center">
-      Manifesto
-    </Flex>
+    <WIP/>
   )
 }
 
