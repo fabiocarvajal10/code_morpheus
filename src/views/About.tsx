@@ -13,11 +13,26 @@ function AboutView() {
     <Stack mb="xl">
       <Center mb="xl">
         <Stack spacing="xs" maw={420}>
-          <Title order={2} color="dark">
-            {Content.mainTitle}
-          </Title>
+          {
+            isScreenSmallerThan.md ? (
+              <>
+                <Title order={2} color="dark">
+                  Code
+                </Title>
+                <Title order={2} color="dark">
+                  Morpheus
+                </Title>
+              </>
+            ): (
+              <Title order={2} color="dark">
+                {Content.mainTitle}
+              </Title>
+            )
+          }
           <Title order={6} ta="right" fw="900" color='gray'>By</Title>
-          <Title order={4} ta="right" color="gray">Fabio Carvajal</Title>
+          <Title order={4} ta="right" color="gray">Fabio 
+            {!isScreenSmallerThan.md && "Carvajal"}
+          </Title>
         </Stack>
       </Center>
       <Image src={CoderImg} height={300} width="100%" fit="contain" withPlaceholder  />
@@ -28,7 +43,7 @@ function AboutView() {
         {Content.aboutTxt2}
       </Text>
       <Grid gutter={14} align='start'>
-        <Grid.Col span={4}>
+        <Grid.Col sm={1} md={4}>
           <ImageCard
             src={EngineeringImg} 
             height={200} 
@@ -36,7 +51,7 @@ function AboutView() {
             desc="Navigating Uncertainty in Projects." 
           />
         </Grid.Col>
-        <Grid.Col span={4}>
+        <Grid.Col sm={1} md={4}>
           <ImageCard
             src={FitnessImg} 
             height={200} 
@@ -44,7 +59,7 @@ function AboutView() {
             desc="Fuel for Consistent Excellence." 
           />
         </Grid.Col>
-        <Grid.Col span={4}>
+        <Grid.Col sm={1} md={4}>
           <ImageCard
             src={CollaborationImg} 
             height={200} 
