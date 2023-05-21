@@ -1,9 +1,7 @@
 import useResponsive from '../hooks/useResponsive'
 import { Center, Grid, Image, Paper, Stack, Text, Title } from '@mantine/core'
 import CoderImg from '../assets/img/master_coder.svg'
-import FitnessImg from '../assets/img/fitness.svg'
-import EngineeringImg from '../assets/img/engineering_team.svg'
-import CollaborationImg from '../assets/img/collaboration.svg'
+
 import ImageCard from '../components/ImageCard'
 import Content from '../content/about'
 
@@ -35,7 +33,7 @@ function AboutView() {
           </Title>
         </Stack>
       </Center>
-      <Image src={CoderImg} height={300} width="100%" fit="contain" withPlaceholder  />
+      <Image src={Content.mainImg} height={300} width="100%" fit="contain" withPlaceholder  />
       <Text fz={24} px="sm">
         {Content.aboutTxt1}
       </Text>
@@ -43,30 +41,16 @@ function AboutView() {
         {Content.aboutTxt2}
       </Text>
       <Grid gutter={14} align='start'>
-        <Grid.Col sm={1} md={4}>
-          <ImageCard
-            src={EngineeringImg} 
-            height={200} 
-            title="Communication" 
-            desc="Navigating Uncertainty in Projects." 
-          />
-        </Grid.Col>
-        <Grid.Col sm={1} md={4}>
-          <ImageCard
-            src={FitnessImg} 
-            height={200} 
-            title="Physical Health" 
-            desc="Fuel for Consistent Excellence." 
-          />
-        </Grid.Col>
-        <Grid.Col sm={1} md={4}>
-          <ImageCard
-            src={CollaborationImg} 
-            height={200} 
-            title="Ownership and Accountability" 
-            desc="Catalysts for Innovation." 
-          />
-        </Grid.Col>
+        {Content.cultureImgs.map(cultuImg => (
+          <Grid.Col sm={1} md={4}>
+            <ImageCard
+              src={cultuImg.src} 
+              height={200} 
+              title={cultuImg.title}
+              desc={cultuImg.desc}
+            />
+          </Grid.Col>
+        ))}
       </Grid>
       <Text fz={24} px="sm">
         {Content.aboutTxt3}
