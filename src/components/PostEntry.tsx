@@ -1,5 +1,6 @@
 import { Badge, Divider, Flex, List, SimpleGrid, Text, Title } from "@mantine/core"
 import useBreakpoints from "../hooks/useResponsive"
+import ResponsiveParagraph from "./Responsive/Paragraph"
 
 interface PostEntryProps {
   id: string
@@ -25,8 +26,6 @@ function PostEntry({
   const { isScreenSmallerThan } = useBreakpoints()
   const smallerThanXS = isScreenSmallerThan.xs
   const smallerThanMD = isScreenSmallerThan.md
-  const ta = smallerThanXS ? 'center' : 'left'
-  const taDesc = smallerThanXS ? 'right' : 'left'
 
   const handleClick = () => {
     onClick && onClick(id)
@@ -60,9 +59,9 @@ function PostEntry({
             )}
           </Flex>
           {summary && (
-            <Text mt="xs" size="xl" align='justify' ta={taDesc} lh={1.2}>
+            <ResponsiveParagraph fz={24} mt="xs" size="xl" align='justify' lh={1.2}>
               {summary}
-            </Text>
+            </ResponsiveParagraph>
           )}
           {children}
         </div>
