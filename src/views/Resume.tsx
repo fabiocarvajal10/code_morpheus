@@ -5,14 +5,14 @@ import { IconBrandGithub, IconBrandLinkedin, IconBrandMedium, IconBrandTwitter, 
 import PostEntry from '../components/PostEntry'
 import Tag from '../components/Tag'
 import useResponsive from '../hooks/useResponsive'
+import ResponsiveSectionTitle from '../components/Responsive/SectionTitle'
+import ResponsiveParagraph from '../components/Responsive/Paragraph'
 
 
 function ResumeView() {
   const { isScreenSmallerThan } = useResponsive()
   const smallerThanXS = isScreenSmallerThan.xs
   const smallerThanMd = isScreenSmallerThan.md
-  const ta = smallerThanXS ? 'center' : 'left'
-  const taDesc = smallerThanXS ? 'right' : 'left'
   return (
     <Flex align="center">
       <Stack p="md" spacing="xs">
@@ -49,18 +49,22 @@ function ResumeView() {
         </CardSection>
         <CardSection mb="xs">
           <Paper p="sm" pt="0" radius="md">
-            <Title px={0} color="dark" order={3} mb="md" ta={ta}>Summary</Title>
+            <ResponsiveSectionTitle px={0} color="dark" order={3} mb="md">Summary</ResponsiveSectionTitle>
             <Center>
-              <Text px={0} size="xl" ta={taDesc}>
+              <ResponsiveParagraph px={0} fz={24} size="xl">
                 {Content.summary}
-              </Text>
+              </ResponsiveParagraph>
             </Center>
           </Paper>
         </CardSection>
         <CardSection>      
           <Stack>
             <Paper px="sm" py={0} radius="md">
-              {!smallerThanMd && <Title px={0} color="dark" order={3} mb="md" ta={ta}>Career Record</Title>}
+              {!smallerThanMd && (
+                <ResponsiveSectionTitle px={0} color="dark" order={3} mb="md">
+                  Career Record
+                </ResponsiveSectionTitle>
+              )}
               {
                 Content.career.filter(record => Boolean(record.summary)).map((record, i) => (
                   <PostEntry 
@@ -73,11 +77,11 @@ function ResumeView() {
                     summary={record.summary || undefined}
                   >
                     <>
-                      <Title my="sm" color="gray" order={5} ta={ta}>Accomplishments</Title>
+                      <ResponsiveSectionTitle my="sm" color="gray" order={5}>Accomplishments</ResponsiveSectionTitle>
                       <List center spacing="xs" styles={{ root: { listStylePosition: smallerThanMd ? 'outside' : 'inside' } }}>
                         {record.accomplishments?.map((accomplishment) => (
                           <List.Item icon={smallerThanXS ? null : <IconMedal />} key={accomplishment}>
-                            <Text size={18} ta={taDesc}>{smallerThanXS && '-'} {accomplishment}</Text>
+                            <ResponsiveParagraph size={23}>{smallerThanXS && '-'} {accomplishment}</ResponsiveParagraph>
                           </List.Item>
                         ))}
                       </List>
@@ -94,7 +98,11 @@ function ResumeView() {
               }
             </Paper>
             <Paper px="sm" py={0} radius="md">
-              {!smallerThanMd && <Title px={0} order={4} mb="sm" color='dark' ta={ta}>Previous Experience</Title>}
+              {!smallerThanMd && (
+                <ResponsiveSectionTitle px={0} order={4} mb="sm" color='dark'>
+                  Previous Experience
+                </ResponsiveSectionTitle>
+              )}
               {
                 Content.career.filter(record => !Boolean(record.summary)).map((record, i) => (
                   <PostEntry 

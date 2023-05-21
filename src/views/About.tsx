@@ -1,9 +1,8 @@
 import useResponsive from '../hooks/useResponsive'
 import { Center, Grid, Image, Paper, Stack, Text, Title } from '@mantine/core'
-import CoderImg from '../assets/img/master_coder.svg'
-
 import ImageCard from '../components/ImageCard'
 import Content from '../content/about'
+import ResponsiveParagraph from '../components/Responsive/Paragraph'
 
 function AboutView() {
   const { isScreenSmallerThan } = useResponsive()
@@ -34,15 +33,15 @@ function AboutView() {
         </Stack>
       </Center>
       <Image src={Content.mainImg} height={300} width="100%" fit="contain" withPlaceholder  />
-      <Text fz={24} px="sm">
+      <ResponsiveParagraph fz={32} px="sm">
         {Content.aboutTxt1}
-      </Text>
-      <Text fz={24} px="sm">
+      </ResponsiveParagraph>
+      <ResponsiveParagraph fz={32} px="sm">
         {Content.aboutTxt2}
-      </Text>
+      </ResponsiveParagraph>
       <Grid gutter={14} align='start'>
         {Content.cultureImgs.map(cultuImg => (
-          <Grid.Col sm={1} md={4}>
+          <Grid.Col md={4}>
             <ImageCard
               src={cultuImg.src} 
               height={200} 
@@ -52,12 +51,12 @@ function AboutView() {
           </Grid.Col>
         ))}
       </Grid>
-      <Text fz={24} px="sm">
+      <ResponsiveParagraph fz={32} px="sm">
         {Content.aboutTxt3}
-      </Text>
-      <Text fz={24} px="sm">
-      {Content.aboutTxt4}
-      </Text>
+      </ResponsiveParagraph>
+      <ResponsiveParagraph fz={32} px="sm">
+        {Content.aboutTxt4}
+      </ResponsiveParagraph>
     </Stack>
   )
 }
