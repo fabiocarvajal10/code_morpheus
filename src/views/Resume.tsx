@@ -1,5 +1,5 @@
 import { Avatar, CardSection, Center, Container, Flex, Grid, Group, List, Paper, Stack, Text, Title } from '@mantine/core'
-import Content from '../content'
+import Content from '../content/resume'
 import avatarImg from '../assets/img/av.jpeg'
 import { IconBrandGithub, IconBrandLinkedin, IconBrandMedium, IconBrandTwitter, IconMedal } from '@tabler/icons-react'
 import PostEntry from '../components/PostEntry'
