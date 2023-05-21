@@ -28,6 +28,10 @@ export default {
     {
       title: 'Thriving in Change: Embracing Opportunities for Growth',
       desc: 'Embrace change as a catalyst for growth, adapt swiftly to evolving industry landscapes, and seize opportunities to create positive impact and drive success.',
+    },
+    {
+      title: 'Consistency in Code: Conventions Over Style Preferences',
+      desc: 'Prioritize consistent and readable code by following established conventions and best practices over individual style preferences.'
     }
   ]
 }
