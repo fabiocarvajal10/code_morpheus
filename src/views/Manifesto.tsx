@@ -10,6 +10,7 @@ import {
   IconSquareRoundedNumber5Filled,
   IconSquareRoundedNumber6Filled,
   IconSquareRoundedNumber7Filled,
+  IconSquareRoundedNumber8Filled,
 } from '@tabler/icons-react'
 import ResponsiveParagraph from '../components/Responsive/Paragraph'
 
@@ -21,6 +22,7 @@ const ICONS = [
   IconSquareRoundedNumber5Filled,
   IconSquareRoundedNumber6Filled,
   IconSquareRoundedNumber7Filled,
+  IconSquareRoundedNumber8Filled,
 ]
 
 function ManifestoView() {
