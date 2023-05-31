@@ -28,7 +28,7 @@ function ContactForm() {
         value={msg}
         onChange={handleChange}
       />
-      <Button bg="violet" fullWidth leftIcon={<IconBrandWhatsapp/>} onClick={handleSend} size="lg">
+      <Button bg="blue" fullWidth leftIcon={<IconBrandWhatsapp/>} onClick={handleSend} size="lg">
         Send
       </Button>
     </Stack>

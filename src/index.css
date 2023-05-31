@@ -66,6 +66,10 @@ button:focus-visible {
   }
 }
 
+.mantine-Button-root {
+  background-color: #646cff !important;
+}
+
 .mantine-Button-root:hover {
-  background-color: #795092 !important;
+  background-color: #747bff !important;
 }
