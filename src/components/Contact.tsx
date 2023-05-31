@@ -9,7 +9,7 @@ function Contact() {
   return (
     <>
       {!open && 
-        <Button size="xl" bg="blue" onClick={() => toggle()} >
+        <Button className="opaced-button" size="xl" bg="blue" onClick={() => toggle()} >
           <IconBrandWhatsapp/><span style={{ marginLeft: 8}}>Contact</span>
         </Button>
       }
