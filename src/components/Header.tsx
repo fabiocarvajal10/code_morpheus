@@ -14,9 +14,8 @@ import { useToggle } from '@mantine/hooks';
 const data = [
   { icon: <IconAlertCircle size="1rem" />, color: 'violet', label: 'About', href: '/about' },
   { icon: <IconClipboardCopy size="1rem" />, color: 'violet', label: 'Resume', href: '/resume' },
-  { icon: <IconPlayerPlay size="1rem" />, color: 'violet', label: 'Portfolio', href: '/portfolio' },
-  { icon: <IconBrain size="1rem" />, color: 'violet', label: 'Posts', href: '/posts' },
   { icon: <IconBook size="1rem" />, color: 'violet', label: 'Manifesto', href: '/manifesto' },
+  { icon: <IconBrain size="1rem" />, color: 'violet', label: 'Posts', href: 'https://medium.com/@fabio.carvajal' },
 ];
 
 interface MainLinkProps {

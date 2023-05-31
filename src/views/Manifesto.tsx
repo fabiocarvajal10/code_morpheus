@@ -11,6 +11,7 @@ import {
   IconSquareRoundedNumber6Filled,
   IconSquareRoundedNumber7Filled,
   IconSquareRoundedNumber8Filled,
+  IconSquareRoundedNumber9Filled
 } from '@tabler/icons-react'
 import ResponsiveParagraph from '../components/Responsive/Paragraph'
 
@@ -23,6 +24,7 @@ const ICONS = [
   IconSquareRoundedNumber6Filled,
   IconSquareRoundedNumber7Filled,
   IconSquareRoundedNumber8Filled,
+  IconSquareRoundedNumber9Filled,
 ]
 
 function ManifestoView() {
@@ -32,7 +34,7 @@ function ManifestoView() {
         {Content.mainTitle}
       </Title>
 
-      <Flex w="100%">
+      <Flex w="100%" pb="xl">
         <List
         >
           {Content.policies.map((policy, i) => {

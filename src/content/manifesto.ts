@@ -11,6 +11,10 @@ export default {
       desc: 'Prioritize consistent and readable code by following established conventions and best practices over individual style preferences.'
     },
     {
+      title: 'Unity: Working as a Single Unit',
+      desc: 'Harness the power of teamwork and collaboration by aligning individuals towards a common goal, ensuring seamless coordination and collective efficiency.'
+    },
+    {
       title: 'Empowered Creativity: Accountability and Ownership to Unleash Innovation',
       desc: 'Foster a culture of accountability and ownership, empowering individuals to unleash their creativity and drive innovative solutions.',
     },

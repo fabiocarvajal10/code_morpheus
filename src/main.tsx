@@ -7,8 +7,8 @@ import LayoutProvider from './theme/LayoutProvider'
 import ResumeView from './views/Resume'
 import AboutView from './views/About'
 import ManifestoView from './views/Manifesto'
-import PortfolioView from './views/Portfolio'
 import PostsView from './views/Posts'
+import NotFoundView from './views/NotFound'
 
 const router = createBrowserRouter([
   {
@@ -19,10 +19,13 @@ const router = createBrowserRouter([
       { path: "/about", element: <AboutView /> },
       { path: "/resume", element: <ResumeView /> },
       { path: "/manifesto", element: <ManifestoView /> },
-      { path: "/portfolio", element: <PortfolioView /> },
       { path: "/posts", element: <PostsView /> },
+      {
+        path: "*",
+        element: <NotFoundView />,
+      }
     ]
-  }
+  },
 ])
 
 
