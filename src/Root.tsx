@@ -11,7 +11,7 @@ function App() {
       Header={<LayoutHeader />}
     >
       <Outlet />
-      <Affix position={{ bottom: rem(20), right: rem(20) }}>
+      <Affix position={{ bottom: rem(2), right: rem(2) }}>
         <Contact />
       </Affix>
     </Shell>

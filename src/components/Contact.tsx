@@ -9,8 +9,8 @@ function Contact() {
   return (
     <>
       {!open && 
-        <Button className="opaced-button" size="xl" bg="blue" onClick={() => toggle()} >
-          <IconBrandWhatsapp/><span style={{ marginLeft: 8}}>Contact</span>
+        <Button className="opaced-button" size="lg" px="xs" bg="blue" onClick={() => toggle()} >
+          <IconBrandWhatsapp size={38}/>
         </Button>
       }
       {open &&  
