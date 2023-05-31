@@ -16,18 +16,18 @@ function AboutView() {
                 <Title order={2} color="dark">
                   Code
                 </Title>
-                <Title order={2} color="dark">
+                <Title order={2} color="dark" underline>
                   Morpheus
                 </Title>
               </>
             ): (
-              <Title order={2} color="dark">
+              <Title order={2} color="dark" underline>
                 {Content.mainTitle}
               </Title>
             )
           }
           <Title order={6} ta="right" fw="900" color='gray'>By</Title>
-          <Title order={4} ta="right" color="gray">Fabio 
+          <Title order={4} ta="right" color="gray" underline>Fabio 
             {!isScreenSmallerThan.md && "Carvajal"}
           </Title>
         </Stack>

@@ -20,13 +20,16 @@ function ResumeView() {
          <Center>
             <Stack spacing="sm">
               <Container>
+                <Title order={2} mb="md" color="dark" align="center" underline>
+                  {Content.name}
+                </Title>
+              </Container>
+              <Container>
                 <Avatar radius={100} size={250} src={avatarImg} />
               </Container>
               <Stack spacing={0}>
-                <Title order={4} color="dark" align="center">
-                  {Content.name}
-                </Title>
-                <Text fz={22} fw={700} ta="center" color="gray">
+                
+                <Text fz={22} fw={700} ta="center" color="gray" >
                   {Content.title.split(' ').join(' - ')}
                 </Text>
               </Stack>

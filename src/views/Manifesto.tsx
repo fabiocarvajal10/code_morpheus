@@ -30,11 +30,11 @@ const ICONS = [
 function ManifestoView() {
   return (
     <Stack>
-      <Title ta="center" order={2} color="dark">
+      <Title ta="center" order={2} color="dark" underline>
         {Content.mainTitle}
       </Title>
 
-      <Flex w="100%" pb="xl">
+      <Flex  p="md" pb="xl" bg="#F5F5F5">
         <List
         >
           {Content.policies.map((policy, i) => {
