@@ -57,7 +57,7 @@ function ResumeView() {
             <Paper p="sm" pt="0" radius="md" bg="transparent">
               <ResponsiveSectionTitle px={0} color="dark" order={3} mb="md">Summary</ResponsiveSectionTitle>
               <Center>
-                <ResponsiveParagraph px={0} fz={24} size="xl">
+                <ResponsiveParagraph px={0} fz={32} size="xl">
                   {Content.summary}
                 </ResponsiveParagraph>
               </Center>
@@ -83,17 +83,17 @@ function ResumeView() {
                       summary={record.summary || undefined}
                     >
                       <>
-                        <ResponsiveSectionTitle my="sm" color="gray" order={5}>Accomplishments</ResponsiveSectionTitle>
+                        <ResponsiveSectionTitle my="sm" color="gray" order={4}>Accomplishments</ResponsiveSectionTitle>
                         <List center spacing="xs" styles={{ root: { listStylePosition: smallerThanMd ? 'outside' : 'inside' } }}>
                           {record.accomplishments?.map((accomplishment) => (
                             <List.Item icon={smallerThanXS ? null : <IconMedal />} key={accomplishment}>
-                              <ResponsiveParagraph size={23}>{smallerThanXS && '-'} {accomplishment}</ResponsiveParagraph>
+                              <ResponsiveParagraph size={28}>{smallerThanXS && '-'} {accomplishment}</ResponsiveParagraph>
                             </List.Item>
                           ))}
                         </List>
                         <Grid {...(smallerThanXS ? {justify: 'center'} : {} )}>
                             {record.keywords?.split(' ').map(technology => (
-                              <Tag key={technology}>
+                              <Tag key={technology} size='xl'>
                                 {technology}
                               </Tag>
                             ))}
@@ -121,7 +121,7 @@ function ResumeView() {
                     >
                       <Grid {...(smallerThanMd ? {justify: 'center'} : {} )}>
                         {record.keywords?.split(' ').map(technology => (
-                          <Tag key={technology}>
+                          <Tag key={technology} size='xl'>
                             {technology}
                           </Tag>
                         ))}

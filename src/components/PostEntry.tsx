@@ -34,7 +34,7 @@ function PostEntry({
     <SimpleGrid mb="sm" onClick={handleClick}>
       <Flex px={0} py="xs" gap="md" align="start">
         {!isScreenSmallerThan.md && <div>
-          <Badge color="blue" px="xs" mt={10} size="lg">
+          <Badge color="blue" px="xs" mt={10} size="xl">
             {tag}
           </Badge>
         </div>
@@ -53,13 +53,13 @@ function PostEntry({
               </Text>
             </a>
             {smallerThanMD && (
-              <Badge color="blue" px="xs" mt={10} size="lg">
+              <Badge color="blue" px="xs" mt={10} size="xl">
                 {tag}
               </Badge>
             )}
           </Flex>
           {summary && (
-            <ResponsiveParagraph fz={24} mt="xs" size="xl" align='justify' lh={1.2}>
+            <ResponsiveParagraph fz={32} mt="xs" size="xl" align='justify' lh={1.2}>
               {summary}
             </ResponsiveParagraph>
           )}
