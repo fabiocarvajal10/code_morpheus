@@ -7,8 +7,8 @@ import ResponsiveParagraph from '../components/Responsive/Paragraph'
 function AboutView() {
   const { isScreenSmallerThan } = useResponsive()
   return (
-    <Stack mb="xl">
-      <Center mb="xl">
+    <Stack mb="sm">
+      <Center>
         <Stack spacing="xs" maw={420}>
           {
             isScreenSmallerThan.md ? (
@@ -32,31 +32,33 @@ function AboutView() {
           </Title>
         </Stack>
       </Center>
-      <Image src={Content.mainImg} height={300} width="100%" fit="contain" withPlaceholder  />
-      <ResponsiveParagraph fz={32} px="sm">
-        {Content.aboutTxt1}
-      </ResponsiveParagraph>
-      <ResponsiveParagraph fz={32} px="sm">
-        {Content.aboutTxt2}
-      </ResponsiveParagraph>
-      <Grid gutter={14} align='start'>
-        {Content.cultureImgs.map(cultuImg => (
-          <Grid.Col md={4}>
-            <ImageCard
-              src={cultuImg.src} 
-              height={200} 
-              title={cultuImg.title}
-              desc={cultuImg.desc}
-            />
-          </Grid.Col>
-        ))}
-      </Grid>
-      <ResponsiveParagraph fz={32} px="sm">
-        {Content.aboutTxt3}
-      </ResponsiveParagraph>
-      <ResponsiveParagraph fz={32} px="sm">
-        {Content.aboutTxt4}
-      </ResponsiveParagraph>
+      <Stack bg="#F5F5F5" py="sm">
+        <Image src={Content.mainImg} height={300} width="100%" fit="contain" withPlaceholder  />
+        <ResponsiveParagraph fz={32} px="sm">
+          {Content.aboutTxt1}
+        </ResponsiveParagraph>
+        <ResponsiveParagraph fz={32} px="sm">
+          {Content.aboutTxt2}
+        </ResponsiveParagraph>
+        <Grid gutter={14} align='start'>
+          {Content.cultureImgs.map(cultuImg => (
+            <Grid.Col md={4}>
+              <ImageCard
+                src={cultuImg.src} 
+                height={200} 
+                title={cultuImg.title}
+                desc={cultuImg.desc}
+              />
+            </Grid.Col>
+          ))}
+        </Grid>
+        <ResponsiveParagraph fz={32} px="sm">
+          {Content.aboutTxt3}
+        </ResponsiveParagraph>
+        <ResponsiveParagraph fz={32} px="sm">
+          {Content.aboutTxt4}
+        </ResponsiveParagraph>
+      </Stack>
     </Stack>
   )
 }

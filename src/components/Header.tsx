@@ -3,12 +3,13 @@ import {
   IconBook,
   IconBrandWhatsapp,
   IconMenu2,
+  IconTestPipe,
+  IconTestPipe2,
+  IconTestPipeOff,
 } from '@tabler/icons-react';
 import { ThemeIcon, UnstyledButton, Text, Header, Flex, Accordion } from '@mantine/core';
 import { Link, useLocation } from 'react-router-dom';
 import useResponsive from '../hooks/useResponsive';
-import { IconPlayerPlay } from '@tabler/icons-react';
-import { IconBrain } from '@tabler/icons-react';
 import { IconClipboardCopy } from '@tabler/icons-react';
 import { ReactNode, useEffect } from 'react';
 import { useToggle } from '@mantine/hooks';
@@ -26,7 +27,7 @@ const data = [
   { icon: <IconAlertCircle size="1rem" />, color: 'violet', label: 'About', href: '/about' },
   { icon: <IconClipboardCopy size="1rem" />, color: 'violet', label: 'Resume', href: '/resume' },
   { icon: <IconBook size="1rem" />, color: 'violet', label: 'Manifesto', href: '/manifesto' },
-  { icon: <IconBrain size="1rem" />, color: 'violet', label: 'Posts', href: 'https://medium.com/@fabio.carvajal' },
+  { icon: <IconTestPipe size="1rem" />, color: 'violet', label: 'Posts', href: 'https://medium.com/@fabio.carvajal' },
   { icon: <IconBrandWhatsapp size="1rem"/>, color: 'violet', label: 'Contact', href: 'https://api.whatsapp.com/send/?phone=50689751261&app_absent=0'},
 ];
 
@@ -60,7 +61,7 @@ function MainLink({ active, icon, color, label, href }: MainLinkProps) {
           <ThemeIcon color={color} variant="light">
             {icon}
           </ThemeIcon>
-          <Text size={smallerThanMd ? 32 : 24} ff="Roboto Mono" fw={400}>{label}</Text>
+          <Text size={32} ff="Roboto Mono" fw={400}>{label}</Text>
         </Flex>
       </Link>
     </UnstyledButton>
