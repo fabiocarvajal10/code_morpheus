@@ -1,5 +1,5 @@
 import { Button, Stack, Textarea } from "@mantine/core";
-import { IconBrandWhatsapp, IconSend } from "@tabler/icons-react";
+import { IconBrandWhatsapp } from "@tabler/icons-react";
 import { useState } from "react";
 
 const buildURL = (text: string) => {
