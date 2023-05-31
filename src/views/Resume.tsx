@@ -28,8 +28,7 @@ function ResumeView() {
                 <Avatar radius={100} size={250} src={avatarImg} />
               </Container>
               <Stack spacing={0}>
-                
-                <Text fz={22} fw={700} ta="center" color="gray" >
+                <Text fz={22} fw={700} ta="center" color="gray" underline>
                   {Content.title.split(' ').join(' - ')}
                 </Text>
               </Stack>
