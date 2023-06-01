@@ -7,6 +7,7 @@ interface ShellProps {
 }
 
 function Shell({ Header, children }: ShellProps) {
+
   return (
     <Container maw="80rem" mb="sm">
       <Stack>
