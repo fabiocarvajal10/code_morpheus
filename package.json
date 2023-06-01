@@ -1,5 +1,6 @@
 {
   "name": "resume",
+  "homepage": "https://fabiocarvajal10.github.io/fabiocarvajal10.github.io",
   "private": true,
   "version": "0.0.0",
   "engines": {
@@ -9,7 +10,9 @@
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b main -d build"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
