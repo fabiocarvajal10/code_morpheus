@@ -1,7 +1,7 @@
 {
   "name": "resume",
-  "homepage": "https://fabiocarvajal10.github.io/fabiocarvajal10.github.io",
   "private": true,
+  "homepage": "https://codemorpheus.com",
   "version": "0.0.0",
   "engines": {
     "node": ">=19.0.0"
