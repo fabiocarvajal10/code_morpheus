@@ -12,7 +12,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b main -d build"
+    "deploy": "gh-pages -b main -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
