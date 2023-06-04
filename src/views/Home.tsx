@@ -4,7 +4,7 @@ import ImageCard from '../components/ImageCard'
 import Content from '../content/about'
 import ResponsiveParagraph from '../components/Responsive/Paragraph'
 
-function AboutView() {
+function HomeView() {
   const { isScreenSmallerThan } = useResponsive()
   return (
     <Stack mb="sm">
@@ -45,16 +45,16 @@ function AboutView() {
             </Grid.Col>
           ))}
         </Grid>
-        <ResponsiveParagraph px="sm">
+        <ResponsiveParagraph fz={32} px="sm">
           {Content.aboutTxt1}
         </ResponsiveParagraph>
-        <ResponsiveParagraph px="sm">
+        <ResponsiveParagraph fz={32} px="sm">
           {Content.aboutTxt2}
         </ResponsiveParagraph>
-        <ResponsiveParagraph px="sm">
+        <ResponsiveParagraph fz={32} px="sm">
           {Content.aboutTxt3}
         </ResponsiveParagraph>
-        <ResponsiveParagraph px="sm">
+        <ResponsiveParagraph fz={32} px="sm">
           {Content.aboutTxt4}
         </ResponsiveParagraph>
       </Stack>
@@ -62,4 +62,4 @@ function AboutView() {
   )
 }
 
-export default AboutView
+export default HomeView

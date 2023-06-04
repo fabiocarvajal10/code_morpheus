@@ -17,9 +17,9 @@ function ResumeView() {
     <Flex align="center">
       <Stack>
         <Container>
-          <Title order={2} color="dark" align="center" underline>
+          <ResponsiveSectionTitle order={2} color="dark" align="center" underline>
             Resume
-          </Title>
+          </ResponsiveSectionTitle>
         </Container>
         <Stack p="md" spacing="xs" bg="#F5F5F5">
           <CardSection mb="0">
@@ -29,7 +29,7 @@ function ResumeView() {
                   <Avatar radius={100} size={250} src={avatarImg} />
                 </Container>
                 <Stack spacing={0}>
-                  <Title order={4} color="dark" align="center">
+                  <Title order={4}  color="dark" align="center">
                     {Content.name}
                   </Title>
                   <Text fz={22} fw={700} ta="center" color="gray">
@@ -86,14 +86,14 @@ function ResumeView() {
                         <ResponsiveSectionTitle my="sm" color="gray" order={4}>Accomplishments</ResponsiveSectionTitle>
                         <List center spacing="xs" styles={{ root: { listStylePosition: smallerThanMd ? 'outside' : 'inside' } }}>
                           {record.accomplishments?.map((accomplishment) => (
-                            <List.Item icon={smallerThanXS ? null : <IconMedal />} key={accomplishment}>
-                              <ResponsiveParagraph size={28}>{smallerThanXS && '-'} {accomplishment}</ResponsiveParagraph>
+                            <List.Item icon={smallerThanXS ? null : <IconMedal />} key={accomplishment} >
+                              <ResponsiveParagraph style={{ lineHeight: "1.2" }} size={28}>{smallerThanXS && '-'} {accomplishment}</ResponsiveParagraph>
                             </List.Item>
                           ))}
                         </List>
                         <Grid {...(smallerThanXS ? {justify: 'center'} : {} )}>
                             {record.keywords?.split(' ').map(technology => (
-                              <Tag key={technology} size='xl'>
+                              <Tag key={technology} size={smallerThanMd ? 'md' :'xl'}>
                                 {technology}
                               </Tag>
                             ))}
@@ -121,7 +121,7 @@ function ResumeView() {
                     >
                       <Grid {...(smallerThanMd ? {justify: 'center'} : {} )}>
                         {record.keywords?.split(' ').map(technology => (
-                          <Tag key={technology} size='xl'>
+                          <Tag key={technology} size={smallerThanMd ? 'md' :'xl'}>
                             {technology}
                           </Tag>
                         ))}

@@ -1,18 +1,19 @@
 import { Text, TextProps } from "@mantine/core"
-import useResponsive from "../../hooks/useResponsive"
 
 interface ResponsiveParagraphProps  extends TextProps{
   children: React.ReactNode
 }
 
-function ResponsiveParagraph({ children, ...rest }: ResponsiveParagraphProps) {
-  const { isScreenSmallerThan } = useResponsive()
-  const ta = isScreenSmallerThan.xs ? 'right' : 'left'
+function Paragraph({ children, ...rest }: ResponsiveParagraphProps) {
+  const props: TextProps = {
+    ta:  rest.ta || 'left',
+    size: rest.size || 'md',
+  }
   return (
-    <Text {...rest} ta={ta}>
+    <Text {...rest} {...props}>
       {children}
     </Text>
   )
 }
 
-export default ResponsiveParagraph
+export default Paragraph

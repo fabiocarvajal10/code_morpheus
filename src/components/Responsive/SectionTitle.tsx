@@ -1,4 +1,4 @@
-import { Title, TitleProps } from "@mantine/core"
+import { Title, TitleOrder, TitleProps } from "@mantine/core"
 import useResponsive from "../../hooks/useResponsive"
 
 interface ResponsiveSectionTitleProps extends TitleProps {
@@ -7,9 +7,12 @@ interface ResponsiveSectionTitleProps extends TitleProps {
 
 function ResponsiveSectionTitle({ children, ...rest }: ResponsiveSectionTitleProps) {
   const { isScreenSmallerThan } = useResponsive()
-  const ta = isScreenSmallerThan.xs ? 'center' : 'left'
+  const props: TitleProps = {
+    ta:   rest.ta || (isScreenSmallerThan.xs ? 'center' : 'left'),
+    color: rest.color || 'dark',
+  }
   return (
-    <Title {...rest} ta={ta}>
+    <Title {...rest} {...props}>
       {children}
     </Title>
   )

@@ -1,6 +1,7 @@
-import { Badge, Divider, Flex, List, SimpleGrid, Text, Title } from "@mantine/core"
+import { Badge, Divider, Flex, SimpleGrid } from "@mantine/core"
 import useBreakpoints from "../hooks/useResponsive"
 import ResponsiveParagraph from "./Responsive/Paragraph"
+import ResponsiveSectionTitle from "./Responsive/SectionTitle"
 
 interface PostEntryProps {
   id: string
@@ -41,19 +42,19 @@ function PostEntry({
         }
         <div style={{ overflow: "auto", width: "100%" }}>
           <Flex align="center" gap={smallerThanMD ? "xs" : "md"} mb="sm" direction={smallerThanMD ? "column" : "row"}>
-            <Title order={4} color="gray" weight={500} ta="center" >
+            <ResponsiveSectionTitle order={4} color="gray" weight={500} ta="center" >
               {title}
-            </Title>
+            </ResponsiveSectionTitle>
             {!smallerThanXS && <Divider orientation="vertical" />}
             {smallerThanXS && <Divider w="100%" my={0} />}
             
             <a href={subtitleHref} target="_blank" style={{ textDecoration: "none" }}>
-              <Text fz={28} fw={900} color="blue">
+              <ResponsiveParagraph fz={28} fw={900} color="blue">
                 {subtitle}
-              </Text>
+              </ResponsiveParagraph>
             </a>
             {smallerThanMD && (
-              <Badge color="blue" px="xs" mt={10} size="xl">
+              <Badge color="blue" px="xs" mt={0} size="md">
                 {tag}
               </Badge>
             )}

@@ -9,13 +9,14 @@ import AboutView from './views/About'
 import ManifestoView from './views/Manifesto'
 import PostsView from './views/Posts'
 import NotFoundView from './views/NotFound'
+import HomeView from './views/Home'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
     children: [
-      { path: "/", element: <AboutView /> },
+      { path: "/", element: <HomeView /> },
       { path: "/about", element: <AboutView /> },
       { path: "/resume", element: <ResumeView /> },
       { path: "/manifesto", element: <ManifestoView /> },

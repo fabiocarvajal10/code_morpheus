@@ -1,22 +1,25 @@
-import { Container, Image, Paper, Text, Title } from "@mantine/core"
+import { AspectRatio, Container, Image, Paper, Text } from "@mantine/core"
+import ResponsiveSectionTitle from "./Responsive/SectionTitle"
+import ResponsiveParagraph from "./Responsive/Paragraph"
 
 interface ImageCardProps {
   src: string
-  height: number
   title: string
   desc: string
 }
 
-function ImageCard({ src, height, title, desc }: ImageCardProps) {
+function ImageCard({ src, title, desc }: ImageCardProps) {
   return (
     <Container>
       <Paper withBorder shadow='md' py="md">
-        <Image src={src} height={height} fit="contain" />
+        <AspectRatio ratio={16 / 9}>
+        <Image src={src} fit="contain" />
+        </AspectRatio>
       </Paper>
-      <Title ta="center" color="dark" order={5} mt="sm">
+      <ResponsiveSectionTitle ta="center" color="dark" order={5} mt="sm">
         {title}
-      </Title>
-      <Text fz={22} ta="center">{desc}</Text>
+      </ResponsiveSectionTitle>
+      <ResponsiveParagraph fz={22} ta="center">{desc}</ResponsiveParagraph>
     </Container>
   )
 }

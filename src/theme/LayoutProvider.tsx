@@ -70,14 +70,6 @@ function CustomFonts() {
             fontStyle: 'normal',
           },
         },
-        // {
-        //   '@font-face': {
-        //     fontFamily: 'Open Sans Bold',
-        //     src: `url('${OpenSansBold}')`,
-        //     fontWeight: 900,
-        //     fontStyle: 'normal',
-        //   },
-        // },
       ]}
     />
   )

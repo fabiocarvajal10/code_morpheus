@@ -1,6 +1,4 @@
-import useResponsive from '../hooks/useResponsive'
-import WIP from '../components/WIP'
-import { Blockquote, Flex, List, Stack, Title } from '@mantine/core'
+import { Container, Flex, Stack } from '@mantine/core'
 import Content from '../content/manifesto'
 import { 
   IconSquareRoundedNumber1Filled, 
@@ -13,6 +11,8 @@ import {
   IconSquareRoundedNumber8Filled,
   IconSquareRoundedNumber9Filled
 } from '@tabler/icons-react'
+import ResponsiveSectionTitle from '../components/Responsive/SectionTitle'
+import useResponsive from '../hooks/useResponsive'
 import ResponsiveParagraph from '../components/Responsive/Paragraph'
 
 const ICONS = [
@@ -28,30 +28,37 @@ const ICONS = [
 ]
 
 function ManifestoView() {
+  const { isScreenSmallerThan } = useResponsive()
+  const smallerThanXS = isScreenSmallerThan.xs
   return (
     <Stack>
-      <Title ta="center" order={2} color="dark" underline>
+      <ResponsiveSectionTitle ta="center" order={3} underline>
         {Content.mainTitle}
-      </Title>
+      </ResponsiveSectionTitle>
 
-      <Flex  p="md" pb="xl" bg="#F5F5F5">
-        <List
-        >
-          {Content.policies.map((policy, i) => {
-            const Icon = ICONS[i]
-            return (
-              <List.Item py="xs" fz={32} icon={<Icon style={{ color: "violet"}}/>}>
-                <Title order={4} color="dark">
-                  {policy.title}
-                </Title>
-                <ResponsiveParagraph px="sm">
-                  {policy.desc}
-                </ResponsiveParagraph>
-              </List.Item>
-            )
-          })}
-        </List>
-      </Flex>
+      <Stack spacing="md" py={smallerThanXS ? "xs" : "md"} px={smallerThanXS ? "xs" : "md"} bg="#F5F5F5">
+        {Content.policies.map((policy, i) => {
+          const Icon = ICONS[i]
+          return (
+            <Container px="0">
+              <Flex align="start" gap="xs" color='dark'>
+                <Icon style={{ color: "grey", marginTop: 8, flexShrink: 0 }} /> 
+                <Stack spacing={1}>
+                  <ResponsiveSectionTitle order={4} ta="left" align='center' underline>
+                    {policy.title}
+                  </ResponsiveSectionTitle>
+                  <ResponsiveSectionTitle order={5} ta="left">
+                    {policy.subtitle}
+                  </ResponsiveSectionTitle>
+                  <ResponsiveParagraph size={smallerThanXS ? "md" : "lg"}>
+                    {policy.desc}
+                  </ResponsiveParagraph>
+                </Stack>
+              </Flex>
+            </Container>
+          )
+        })}
+      </Stack>
     </Stack>
   )
 }
