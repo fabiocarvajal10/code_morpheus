@@ -11,53 +11,51 @@ import ResponsiveParagraph from '../components/Responsive/Paragraph'
 
 function ResumeView() {
   const { isScreenSmallerThan } = useResponsive()
-  const smallerThanXS = isScreenSmallerThan.xs
+  const smallerThanSM = isScreenSmallerThan.sm
   const smallerThanMd = isScreenSmallerThan.md
+  const titleOrder = smallerThanMd ? 4 : 3
+  const subTitleOrder = smallerThanMd ? 5 : 4
   return (
     <Flex align="center">
       <Stack>
-        <Container>
-          <ResponsiveSectionTitle order={2} color="dark" align="center" underline>
+        <Stack>
+          <ResponsiveSectionTitle order={3} color="dark" ta="center" underline>
             Resume
           </ResponsiveSectionTitle>
-        </Container>
+          <Stack spacing="sm">
+            <Container>
+              <Avatar radius={smallerThanMd ? 100 : 20} size={smallerThanMd ? 100 : 200} src={avatarImg} />
+            </Container>
+            <Stack spacing={0}>
+              <ResponsiveSectionTitle order={4}  color="dark" ta="center">
+                {Content.name}
+              </ResponsiveSectionTitle>
+              <ResponsiveParagraph fw={700} ta="center" color="gray">
+                {Content.title.split(' ').join(' - ')}
+              </ResponsiveParagraph>
+            </Stack>
+            <Group position='center' spacing="lg">
+              <a href='https://www.linkedin.com/in/fabio-c-250055a4' target='_blank'>
+                <IconBrandLinkedin size={28} />
+              </a>
+              <a href="https://twitter.com/Agent_Carvajal" target="_blank">
+                <IconBrandTwitter size={28}  />
+              </a>
+              <a href="https://github.com/fabiocarvajal10" target="_blank">
+                <IconBrandGithub size={28} />
+              </a>
+              <a href="https://medium.com/@fabio.carvajal" target="_blank">
+                <IconBrandMedium size={28} />
+              </a>
+            </Group>
+          </Stack>
+        </Stack>
         <Stack p="md" spacing="xs" bg="#F5F5F5">
-          <CardSection mb="0">
-            <Center>
-              <Stack spacing="sm">
-                <Container>
-                  <Avatar radius={100} size={250} src={avatarImg} />
-                </Container>
-                <Stack spacing={0}>
-                  <Title order={4}  color="dark" align="center">
-                    {Content.name}
-                  </Title>
-                  <Text fz={22} fw={700} ta="center" color="gray">
-                    {Content.title.split(' ').join(' - ')}
-                  </Text>
-                </Stack>
-                <Group position='center' spacing="lg">
-                  <a href='https://www.linkedin.com/in/fabio-c-250055a4' target='_blank'>
-                    <IconBrandLinkedin size={28} />
-                  </a>
-                  <a href="https://twitter.com/Agent_Carvajal" target="_blank">
-                    <IconBrandTwitter size={28}  />
-                  </a>
-                  <a href="https://github.com/fabiocarvajal10" target="_blank">
-                    <IconBrandGithub size={28} />
-                  </a>
-                  <a href="https://medium.com/@fabio.carvajal" target="_blank">
-                    <IconBrandMedium size={28} />
-                  </a>
-                </Group>
-              </Stack>
-            </Center>
-          </CardSection>
           <CardSection mb="xs">
-            <Paper p="sm" pt="0" radius="md" bg="transparent">
-              <ResponsiveSectionTitle px={0} color="dark" order={3} mb="md">Summary</ResponsiveSectionTitle>
+            <Paper p="sm" pt="2" radius="md" bg="transparent">
+              <ResponsiveSectionTitle px={0} color="dark" order={titleOrder} mb="xs">Summary</ResponsiveSectionTitle>
               <Center>
-                <ResponsiveParagraph px={0} fz={32} size="xl">
+                <ResponsiveParagraph px={0}>
                   {Content.summary}
                 </ResponsiveParagraph>
               </Center>
@@ -66,11 +64,10 @@ function ResumeView() {
           <CardSection>      
             <Stack>
               <Paper px="sm" py={0} radius="md" bg="transparent">
-                {!smallerThanMd && (
-                  <ResponsiveSectionTitle px={0} color="dark" order={3} mb="md">
+                  <ResponsiveSectionTitle px={0} color="dark" order={titleOrder} mb="xs">
                     Career Record
                   </ResponsiveSectionTitle>
-                )}
+  
                 {
                   Content.career.filter(record => Boolean(record.summary)).map((record, i) => (
                     <PostEntry 
@@ -83,17 +80,17 @@ function ResumeView() {
                       summary={record.summary || undefined}
                     >
                       <>
-                        <ResponsiveSectionTitle my="sm" color="gray" order={4}>Accomplishments</ResponsiveSectionTitle>
+                        <ResponsiveSectionTitle my="sm" color="gray" order={subTitleOrder} underline>Accomplishments</ResponsiveSectionTitle>
                         <List center spacing="xs" styles={{ root: { listStylePosition: smallerThanMd ? 'outside' : 'inside' } }}>
                           {record.accomplishments?.map((accomplishment) => (
-                            <List.Item icon={smallerThanXS ? null : <IconMedal />} key={accomplishment} >
-                              <ResponsiveParagraph style={{ lineHeight: "1.2" }} size={28}>{smallerThanXS && '-'} {accomplishment}</ResponsiveParagraph>
+                            <List.Item icon={smallerThanMd ? null : <IconMedal />} key={accomplishment} >
+                              <ResponsiveParagraph style={{ lineHeight: "1.2" }}>{smallerThanMd && '-'} {accomplishment}</ResponsiveParagraph>
                             </List.Item>
                           ))}
                         </List>
-                        <Grid {...(smallerThanXS ? {justify: 'center'} : {} )}>
+                        <Grid {...(smallerThanMd ? {justify: 'center'} : {} )}>
                             {record.keywords?.split(' ').map(technology => (
-                              <Tag key={technology} size={smallerThanMd ? 'md' :'xl'}>
+                              <Tag key={technology} size={smallerThanMd ? 'md' :'lg'}>
                                 {technology}
                               </Tag>
                             ))}
@@ -105,7 +102,7 @@ function ResumeView() {
               </Paper>
               <Paper px="sm" py={0} radius="md" bg="transparent">
                 {!smallerThanMd && (
-                  <ResponsiveSectionTitle px={0} order={4} mb="sm" color='dark'>
+                  <ResponsiveSectionTitle px={0} order={titleOrder} mb="sm" color='dark'>
                     Previous Experience
                   </ResponsiveSectionTitle>
                 )}
@@ -121,7 +118,7 @@ function ResumeView() {
                     >
                       <Grid {...(smallerThanMd ? {justify: 'center'} : {} )}>
                         {record.keywords?.split(' ').map(technology => (
-                          <Tag key={technology} size={smallerThanMd ? 'md' :'xl'}>
+                          <Tag key={technology} size={smallerThanMd ? 'md' :'lg'}>
                             {technology}
                           </Tag>
                         ))}

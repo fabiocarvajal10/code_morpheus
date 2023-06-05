@@ -11,16 +11,16 @@ interface ImageCardProps {
 
 function ImageCard({ src, title, desc }: ImageCardProps) {
   const { isScreenSmallerThan } = useResponsive()
-  const smallerThanXS = isScreenSmallerThan.xs
+  const smallerThanMD = isScreenSmallerThan.md
 
   return (
     <Container>
       <Paper withBorder shadow='md' py="md">
         <AspectRatio ratio={16 / 9}>
-        <Image src={src} fit="contain" />
+          <Image src={src} height="auto" fit="contain" />
         </AspectRatio>
       </Paper>
-      <ResponsiveSectionTitle ta="center" color="dark" order={smallerThanXS ? 6 : 5} mt="sm">
+      <ResponsiveSectionTitle ta="center" color="dark" order={smallerThanMD ? 6 : 5} mt="sm">
         {title}
       </ResponsiveSectionTitle>
       <ResponsiveParagraph ta="center">{desc}</ResponsiveParagraph>

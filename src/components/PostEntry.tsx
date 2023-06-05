@@ -25,7 +25,6 @@ function PostEntry({
   onClick,
 }: PostEntryProps) {
   const { isScreenSmallerThan } = useBreakpoints()
-  const smallerThanXS = isScreenSmallerThan.xs
   const smallerThanMD = isScreenSmallerThan.md
 
   const handleClick = () => {
@@ -42,14 +41,14 @@ function PostEntry({
         }
         <div style={{ overflow: "auto", width: "100%" }}>
           <Flex align="center" gap={smallerThanMD ? "xs" : "md"} mb="sm" direction={smallerThanMD ? "column" : "row"}>
-            <ResponsiveSectionTitle order={4} color="gray" weight={500} ta="center" >
+            <ResponsiveSectionTitle order={smallerThanMD ? 5 : 4} color="gray" weight={500} ta="center" >
               {title}
             </ResponsiveSectionTitle>
-            {!smallerThanXS && <Divider orientation="vertical" />}
-            {smallerThanXS && <Divider w="100%" my={0} />}
+            {!smallerThanMD && <Divider orientation="vertical" />}
+            {smallerThanMD && <Divider w="100%" my={0} />}
             
             <a href={subtitleHref} target="_blank" style={{ textDecoration: "none" }}>
-              <ResponsiveParagraph fz={28} fw={900} color="blue">
+              <ResponsiveParagraph fw={900} color="blue">
                 {subtitle}
               </ResponsiveParagraph>
             </a>
@@ -60,7 +59,7 @@ function PostEntry({
             )}
           </Flex>
           {summary && (
-            <ResponsiveParagraph fz={32} mt="xs" size="xl" align='justify' lh={1.2}>
+            <ResponsiveParagraph  mt="xs" align='justify' lh={1.2}>
               {summary}
             </ResponsiveParagraph>
           )}

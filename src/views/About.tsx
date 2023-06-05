@@ -7,7 +7,7 @@ import ResponsiveSectionTitle from '../components/Responsive/SectionTitle'
 import { Link } from 'react-router-dom'
 
 function AboutView() {
-  const { isScreenSmallerThan } = useResponsive()
+  const { isScreenSmallerThan, isScreenLargerThan } = useResponsive()
   return (
     <Stack mb="sm">
       <Center>
@@ -49,7 +49,7 @@ function AboutView() {
         </ResponsiveParagraph>
         <Grid gutter={14} align='start'>
           {Content.cultureImgs.map(cultuImg => (
-            <Grid.Col md={4}>
+            <Grid.Col md={4} px={isScreenSmallerThan.md && isScreenLargerThan.xs ? 100 : "auto"}>
               <ImageCard
                 src={cultuImg.src} 
                 title={cultuImg.title}
@@ -61,7 +61,7 @@ function AboutView() {
         <Center>
           <Link to="/manifesto">
             <Button size="sm" fullWidth={false}>
-                Learn more about the culture
+                {isScreenSmallerThan.xs ? "Learn more" : "Learn more about the culture"}
             </Button>
           </Link>
         </Center>

@@ -118,7 +118,7 @@ export default {
       summary: "Key member of the development team that expanded an in-house e-commerce solution on top of MedusaJS, with achievements including the integration of real-time chat and multi-vendor functionality, as well as the development of streamlined onboarding and shipping processes."
     },
     {
-      title: "Senior React Engineer / Testing Library",
+      title: "Senior React Testing Engineer",
       company: "FormSwift / Dropbox",
       directContact: true,
       years: "2022 - 2023",

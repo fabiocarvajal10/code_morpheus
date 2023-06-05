@@ -29,14 +29,14 @@ const ICONS = [
 
 function ManifestoView() {
   const { isScreenSmallerThan } = useResponsive()
-  const smallerThanXS = isScreenSmallerThan.xs
+  const smallerThanMD = isScreenSmallerThan.md
   return (
     <Stack>
       <ResponsiveSectionTitle ta="center" order={3} underline>
         {Content.mainTitle}
       </ResponsiveSectionTitle>
 
-      <Stack spacing="md" py={smallerThanXS ? "xs" : "md"} px={smallerThanXS ? "xs" : "md"} bg="#F5F5F5">
+      <Stack spacing="md" py={smallerThanMD ? "xs" : "md"} px={smallerThanMD ? "xs" : "md"} bg="#F5F5F5">
         {Content.policies.map((policy, i) => {
           const Icon = ICONS[i]
           return (
@@ -44,10 +44,10 @@ function ManifestoView() {
               <Flex align="start" gap="xs" color='dark'>
                 <Icon style={{ color: "grey", marginTop: 8, flexShrink: 0 }} /> 
                 <Stack spacing={1}>
-                  <ResponsiveSectionTitle order={smallerThanXS ? 5 : 4} ta="left" align='center' underline>
+                  <ResponsiveSectionTitle order={smallerThanMD ? 5 : 4} ta="left" align='center' underline>
                     {policy.title}
                   </ResponsiveSectionTitle>
-                  <ResponsiveSectionTitle order={smallerThanXS ? 6 : 5} ta="left">
+                  <ResponsiveSectionTitle order={smallerThanMD ? 6 : 5} ta="left">
                     {policy.subtitle}
                   </ResponsiveSectionTitle>
                   <ResponsiveParagraph>

@@ -7,8 +7,8 @@ interface ResponsiveParagraphProps  extends TextProps{
 
 function Paragraph({ children, ...rest }: ResponsiveParagraphProps) {
   const { isScreenSmallerThan } = useResponsive()
-  const smallerThanXS = isScreenSmallerThan.xs
-  const defaultSize= smallerThanXS ? "sm" : "lg"
+  const smallerThanMD = isScreenSmallerThan.md
+  const defaultSize= smallerThanMD ? "md" : "lg"
   const props: TextProps = {
     ta:  rest.ta || 'left',
     size: rest.size || defaultSize,

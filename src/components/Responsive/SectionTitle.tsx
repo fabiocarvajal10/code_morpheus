@@ -8,7 +8,7 @@ interface ResponsiveSectionTitleProps extends TitleProps {
 function ResponsiveSectionTitle({ children, ...rest }: ResponsiveSectionTitleProps) {
   const { isScreenSmallerThan } = useResponsive()
   const props: TitleProps = {
-    ta:   rest.ta || (isScreenSmallerThan.xs ? 'center' : 'left'),
+    ta:   rest.ta || (isScreenSmallerThan.md ? 'center' : 'left'),
     color: rest.color || 'dark',
   }
   return (
