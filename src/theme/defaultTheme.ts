@@ -3,7 +3,6 @@ import { primary } from "./color"
 export default {
   colorScheme: "light",
   colors: primary,
-  primaryColor: "green",
   cursorType: "pointer",
   fontFamily: 'Nunito Sans',
   headings: {
@@ -58,13 +57,6 @@ export default {
         },
       },
     },
-    // Title: {
-    //   styles: {
-    //     root: {
-    //       textTransform: "uppercase",
-    //     },
-    //   },
-    // },
     NavLink: {
       styles(theme: any) {
         return {
