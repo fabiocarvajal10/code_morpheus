@@ -1,6 +1,7 @@
 import { AspectRatio, Container, Image, Paper, Text } from "@mantine/core"
 import ResponsiveSectionTitle from "./Responsive/SectionTitle"
 import ResponsiveParagraph from "./Responsive/Paragraph"
+import useResponsive from "../hooks/useResponsive"
 
 interface ImageCardProps {
   src: string
@@ -9,6 +10,9 @@ interface ImageCardProps {
 }
 
 function ImageCard({ src, title, desc }: ImageCardProps) {
+  const { isScreenSmallerThan } = useResponsive()
+  const smallerThanXS = isScreenSmallerThan.xs
+
   return (
     <Container>
       <Paper withBorder shadow='md' py="md">
@@ -16,10 +20,10 @@ function ImageCard({ src, title, desc }: ImageCardProps) {
         <Image src={src} fit="contain" />
         </AspectRatio>
       </Paper>
-      <ResponsiveSectionTitle ta="center" color="dark" order={5} mt="sm">
+      <ResponsiveSectionTitle ta="center" color="dark" order={smallerThanXS ? 6 : 5} mt="sm">
         {title}
       </ResponsiveSectionTitle>
-      <ResponsiveParagraph fz={22} ta="center">{desc}</ResponsiveParagraph>
+      <ResponsiveParagraph ta="center">{desc}</ResponsiveParagraph>
     </Container>
   )
 }

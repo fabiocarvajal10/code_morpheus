@@ -44,13 +44,13 @@ function ManifestoView() {
               <Flex align="start" gap="xs" color='dark'>
                 <Icon style={{ color: "grey", marginTop: 8, flexShrink: 0 }} /> 
                 <Stack spacing={1}>
-                  <ResponsiveSectionTitle order={4} ta="left" align='center' underline>
+                  <ResponsiveSectionTitle order={smallerThanXS ? 5 : 4} ta="left" align='center' underline>
                     {policy.title}
                   </ResponsiveSectionTitle>
-                  <ResponsiveSectionTitle order={5} ta="left">
+                  <ResponsiveSectionTitle order={smallerThanXS ? 6 : 5} ta="left">
                     {policy.subtitle}
                   </ResponsiveSectionTitle>
-                  <ResponsiveParagraph size={smallerThanXS ? "md" : "lg"}>
+                  <ResponsiveParagraph>
                     {policy.desc}
                   </ResponsiveParagraph>
                 </Stack>
