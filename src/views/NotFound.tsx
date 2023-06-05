@@ -1,9 +1,15 @@
-import { Image } from "@mantine/core"
+import { Image, Stack } from "@mantine/core"
 import NotFoundImg from '../assets/img/not_found.svg'
+import ResponsiveSectionTitle from "../components/Responsive/SectionTitle"
 
 function NotFoundView() {
   return (
-    <Image src={NotFoundImg} height={300} width="100%" fit="contain" withPlaceholder  />
+    <Stack>
+      <Image src={NotFoundImg} height={300} width="100%" fit="contain" withPlaceholder  />
+      <ResponsiveSectionTitle>
+        Page not found
+      </ResponsiveSectionTitle>
+    </Stack>
   )
 }
 
