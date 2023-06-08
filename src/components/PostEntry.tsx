@@ -34,7 +34,7 @@ function PostEntry({
     <SimpleGrid mb="sm" onClick={handleClick}>
       <Flex px={0} py="xs" gap="md" align="start">
         {!isScreenSmallerThan.md && <div>
-          <Badge color="blue" px="xs" mt={10} size="xl">
+          <Badge color="blue" px="xs" mt={4} size="xl">
             {tag}
           </Badge>
         </div>

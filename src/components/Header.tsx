@@ -2,15 +2,16 @@ import {
   IconAlertCircle,
   IconBook,
   IconBrandWhatsapp,
+  IconCode,
   IconTestPipe,
 } from '@tabler/icons-react';
-import { ThemeIcon, UnstyledButton, Text, Header, Flex, Accordion, Burger, Collapse, Container, Stack } from '@mantine/core';
+import { ThemeIcon, Image, UnstyledButton, Text, Header, Flex, Burger, Collapse, Stack } from '@mantine/core';
 import { Link, useLocation } from 'react-router-dom';
 import useResponsive from '../hooks/useResponsive';
 import { IconClipboardCopy } from '@tabler/icons-react';
 import { ReactNode, useEffect } from 'react';
-import { useDisclosure, useToggle } from '@mantine/hooks';
-
+import { useDisclosure } from '@mantine/hooks';
+import Logo from '../assets/img/logo.png';
 
 interface MainLinkProps {
   icon: React.ReactNode
@@ -21,6 +22,7 @@ interface MainLinkProps {
 }
 
 const data = [
+  { icon: <IconCode size="1rem" />, color: 'violet', label: 'Home', href: '/' },
   { icon: <IconAlertCircle size="1rem" />, color: 'violet', label: 'About', href: '/about' },
   { icon: <IconClipboardCopy size="1rem" />, color: 'violet', label: 'Resume', href: '/resume' },
   { icon: <IconBook size="1rem" />, color: 'violet', label: 'Manifesto', href: '/manifesto' },
@@ -53,7 +55,7 @@ function MainLink({ active, icon, color, label, href }: MainLinkProps) {
         }),
       })}
     >
-      <Link to={href} target={href.startsWith('https://') ? "_blank" : "_self"} style={{ textDecoration: 'none', color: "gray" }}>
+      <Link to={href} style={{ textDecoration: 'none', color: "gray" }}>
         <Flex gap={smallerThanMd ? 28 : 14} align="center">
           <ThemeIcon color={color} variant="light">
             {icon}
@@ -99,9 +101,9 @@ function LayoutHeader() {
   return (
     <>
       {!smallerThanMd && <Header px="xl" py="md" height="auto">
-        <Flex justify={"center"} align="center" >
+        <Flex justify="center" align="center" >
           <Flex justify="space-between" gap={24}>
-          {menuItems}
+            {menuItems}
           </Flex>
         </Flex>
       </Header>
