@@ -2,29 +2,43 @@ import FitnessImg from '../assets/img/fitness.svg'
 import EngineeringImg from '../assets/img/engineering_team.svg'
 import CollaborationImg from '../assets/img/collaboration.svg'
 import CoderImg from '../assets/img/master_coder.svg'
-
+import { IconBrandNextjs, IconBrandReact, IconBrandReactNative } from '@tabler/icons-react'
+import { FaAndroid, FaAngular, FaAppStoreIos, FaAws, FaNodeJs, FaReact, FaSalesforce, FaShopify, FaVuejs } from 'react-icons/fa'
 export default {
   mainTitle: 'CodeMorpheus',
-  aboutTxt1: "We transcend traditional technical skills, embracing a coding mindset that sparks true transformation. It's a journey fueled by curiosity, critical thinking, and unwavering resilience—a quest to challenge the status quo and unlock the boundless potential of coding.",
-  aboutTxt2: "But it doesn't stop there. We know that greatness is achieved through collaboration. Within our coding realm, effective teamwork takes center stage. We bring together a dynamic ensemble of diverse talents, united by a common purpose. Together, we conquer obstacles, unravel complex puzzles, and achieve remarkable feats.",
-  aboutTxt3: "Within the Code Morpheus ecosystem, collaboration thrives. We cultivate an atmosphere of trust, respect, and open communication, where every voice is heard and ideas flourish. Active engagement, vibrant idea exchanges, and constructive feedback empower our team members to learn, grow, and unleash their full potential.",
-  aboutTxt4: "Join us on this extraordinary journey where minds are elevated, boundaries are shattered, and the coding universe is transformed. Together, we shape the digital landscape and leave an indelible mark on the world. Welcome to Code Morpheus, where coding becomes an art and teamwork is the catalyst for greatness.",
+  title1: "10 Years of Software Engineering Excellence: ",
+  subtitle1: "Delivering Impactful Solutions for Business Growth and Success",
+  aboutTxt1: `In the fast-paced world of software engineering, it's crucial to assemble a team that is not only highly skilled but also laser-focused on delivering tangible results. As an experienced leader in the field, I have a proven track record of curating teams comprised of top-notch talent who prioritize productivity over frivolous experimentation. In other words "Maximizing Efficiency for Optimal Business Success"`,
+  aboutTxt2: "We believe in efficiency and driving your business forward. Our approach is straightforward: we don't get caught up in fancy development playgrounds or wasting time on tools that don't directly contribute to your bottom line. Instead, we're here to make you money and achieve your goals swiftly.",
+  aboutTxt3: "If you're seeking a team that is dedicated to understanding your business, prioritizing your goals, and delivering pragmatic solutions, we are here for you. Let us show you how our client-centric approach, combined with our technical expertise, can propel your business forward. ",
+  // aboutTxt1: "In today's fast-paced technological landscape, software engineering goes beyond writing code and building applications. It has evolved into a discipline that prioritizes team collaboration, comfort, and continuous learning. As an experienced software engineer, I understand the importance of creating an environment where every team member feels valued and confident in their abilities.",
+  //aboutTxt2: "Software engineering is not just about writing code; it's about building a supportive team environment, fostering confidence, and enabling continuous learning. Together, we can create a culture that empowers individuals, fuels collaboration, and drives remarkable success. Let's embark on this journey of growth and excellence, as we redefine the essence of software engineering.",
+
   mainImg: CoderImg,
-  cultureImgs: [
+  stacks: [
     {
-      src: EngineeringImg,
-      title: 'Communication',
-      desc: 'Navigating Uncertainty in Projects.'
+      Icon: FaReact,
     },
     {
-      src: FitnessImg,
-      title: 'Physical Health',
-      desc: 'Fuel for Consistent Excellence.'
+      Icon: FaAngular,
     },
     {
-      src: CollaborationImg,
-      title: 'Ownership and Accountability',
-      desc: 'Catalysts for Innovation.'
+      Icon: FaVuejs,
     },
+    {
+      Icon: FaNodeJs,
+    },
+    {
+      Icon: FaAndroid,
+    },
+    {
+      Icon: FaShopify,
+    },
+    {
+      Icon: FaSalesforce,
+    },
+    { 
+      Icon: FaAws
+    }
   ]
 }

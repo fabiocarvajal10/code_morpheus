@@ -1,6 +1,6 @@
 export default {
   name: 'Fabio Carvajal',
-  summary: `Accomplished software engineer with over 8 years of experience, I have honed my skills in React, and Nodejs by working in diverse environments, ranging from real estate to industries such as fintech, document automation, freelancing and web3. Experienced in both corporate and startup environments. Have a proven track record of delivering high-quality software on time and on budget.
+  summary: `Accomplished software engineer with over 9 years of experience, I have honed my skills in React, and Nodejs by working in diverse environments, ranging from real estate to industries such as fintech, document automation, freelancing and web3. Experienced in both corporate and startup environments. Have a proven track record of delivering high-quality software on time and on budget.
   My expertise lies in creating innovative solutions that drive business success, and I enjoy tackling new challenges while ensuring software is easy to work with. 
   I possess excellent communication skills and a strong commitment to collaboration, making me a valuable asset to any team. I am eager to make a positive impact on your organization... Let's join forces and achieve great things together!`,
   title: 'FullStack Web3 React/NodeJS',
@@ -225,7 +225,7 @@ export default {
       company: 'Intel Corporation',
       href: "https://www.intel.com/content/www/us/en/homepage.html",
       domain: "Website & Infrastructure",
-      years: '2015 - 2016',
+      years: '2014 - 2016',
       keywords: "java gradle groovy git OSGI AEM Teamcity",
       summary: null
     },

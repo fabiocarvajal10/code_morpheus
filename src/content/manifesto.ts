@@ -3,6 +3,11 @@ export default {
   description: '',
   policies: [
     {
+      title: 'Client-Centric Experts',
+      subtitle: 'Prioritizing Your Success Over Shiny Tools',
+      desc: 'By prioritizing your needs over the lure of fancy dev playgrounds, we optimize our efforts to ensure maximum impact. We foster an environment that values creativity, collaboration, and a practical mindset, which allows us to deliver solutions that are both innovative and effective.',
+    },
+    {
       title: 'Peak Performance',
       subtitle: 'Consistent Excellence through Physical Health',
       desc: 'Prioritize physical well-being to sustain excellence, resilience, and optimal performance as individuals and a team.',
@@ -21,11 +26,6 @@ export default {
       title: 'Empowered Creativity',
       subtitle: 'Accountability and Ownership to Unleash Innovation',
       desc: 'Foster a culture of accountability and ownership, empowering individuals to unleash their creativity and drive innovative solutions.',
-    },
-    {
-      title: 'Customer Delight',
-      subtitle: 'Driving Satisfaction and Continuous Improvement',
-      desc: 'Obsess over customer satisfaction, continuously improve our products and services, and exceed expectations to create lasting relationships.',
     },
     {
       title: 'Learning Engine',

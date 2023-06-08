@@ -100,7 +100,7 @@ function LayoutHeader() {
   const menuItems = data.map((link) => <MainLink {...link} key={link.label} active={location.pathname === link.href} />)
   return (
     <>
-      {!smallerThanMd && <Header px="xl" py="md" height="auto">
+      {!smallerThanMd && <Header px="xl" py="md" height="auto" pos="sticky">
         <Flex justify="center" align="center" >
           <Flex justify="space-between" gap={24}>
             {menuItems}
