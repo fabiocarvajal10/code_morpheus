@@ -1,0 +1,1 @@
+export const contactLink = 'https://api.whatsapp.com/send/?phone=50689751261&app_absent=0'

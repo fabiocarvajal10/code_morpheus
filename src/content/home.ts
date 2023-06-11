@@ -8,12 +8,6 @@ export default {
   mainTitle: 'CodeMorpheus',
   title1: "10 Years of Software Engineering Excellence: ",
   subtitle1: "Delivering Impactful Solutions for Business Growth and Success",
-  aboutTxt1: `In the fast-paced world of software engineering, it's crucial to assemble a team that is not only highly skilled but also laser-focused on delivering tangible results. As an experienced leader in the field, I have a proven track record of curating teams comprised of top-notch talent who prioritize productivity over frivolous experimentation. In other words "Maximizing Efficiency for Optimal Business Success"`,
-  aboutTxt2: "We believe in efficiency and driving your business forward. Our approach is straightforward: we don't get caught up in fancy development playgrounds or wasting time on tools that don't directly contribute to your bottom line. Instead, we're here to make you money and achieve your goals swiftly.",
-  aboutTxt3: "If you're seeking a team that is dedicated to understanding your business, prioritizing your goals, and delivering pragmatic solutions, we are here for you. Let us show you how our client-centric approach, combined with our technical expertise, can propel your business forward. ",
-  // aboutTxt1: "In today's fast-paced technological landscape, software engineering goes beyond writing code and building applications. It has evolved into a discipline that prioritizes team collaboration, comfort, and continuous learning. As an experienced software engineer, I understand the importance of creating an environment where every team member feels valued and confident in their abilities.",
-  //aboutTxt2: "Software engineering is not just about writing code; it's about building a supportive team environment, fostering confidence, and enabling continuous learning. Together, we can create a culture that empowers individuals, fuels collaboration, and drives remarkable success. Let's embark on this journey of growth and excellence, as we redefine the essence of software engineering.",
-
   mainImg: CoderImg,
   stacks: [
     {
@@ -39,6 +33,33 @@ export default {
     },
     { 
       Icon: FaAws
+    }
+  ],
+  whyPoints: [
+    {
+      title: 'Fair & Transparent rates',
+      desc: 'Our Team Does Not Profit from Individual Software Professionals. Instead, We Work Together on Projects, Earning as a Cohesive Unit. Experience the Value of True Collaboration.',
+    }, {
+      title: 'Not another development agency',
+      desc: 'We are a network of senior engineers that know how to deliver results. Ownership is a core value.',
+    }, {
+      title: 'Write less do more',
+      desc: `Our goal is to provide a good practical product so you can profit, that's it.`,
+    }, {
+      title: 'Seamless Collaboration',
+      desc: 'Experience the Power of Unity: Our Team Works in Perfect Sync, Just Like a Professional Basketball Team. Trust, Communication, and Cohesion - All in One Package.',
+    },
+  ],
+  isAMatch: [
+    {
+      title: 'Have a specific goal?',
+      desc: 'We do not profit from software professional, we worked together on projects and earn as a team.',
+    }, {
+      title: 'Escape Overpriced Agency Fees?',
+      desc: `Join Our Team and Experience the Difference: We're Not an Agency, We're a Collaborative Team of Engineers. No Overblown Fees, Just Quality Work.`,
+    }, {
+      title: 'Need a "Tiger Team" for a specific goal',
+      desc: `Assemble Your "Tiger Team" for Targeted Success: Achieve Your Specific Goal with Our Expertise.`,
     }
   ]
 }

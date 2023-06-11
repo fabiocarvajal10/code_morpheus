@@ -12,6 +12,7 @@ import { IconClipboardCopy } from '@tabler/icons-react';
 import { ReactNode, useEffect } from 'react';
 import { useDisclosure } from '@mantine/hooks';
 import Logo from '../assets/img/logo.png';
+import { contactLink } from '../constants';
 
 interface MainLinkProps {
   icon: React.ReactNode
@@ -27,7 +28,7 @@ const data = [
   { icon: <IconClipboardCopy size="1rem" />, color: 'violet', label: 'Resume', href: '/resume' },
   { icon: <IconBook size="1rem" />, color: 'violet', label: 'Manifesto', href: '/manifesto' },
   { icon: <IconTestPipe size="1rem" />, color: 'violet', label: 'Blog', href: 'https://medium.com/@fabio.carvajal' },
-  { icon: <IconBrandWhatsapp size="1rem"/>, color: 'violet', label: 'Contact', href: 'https://api.whatsapp.com/send/?phone=50689751261&app_absent=0'},
+  { icon: <IconBrandWhatsapp size="1rem"/>, color: 'violet', label: 'Contact', href: contactLink},
 ];
 
 function MainLink({ active, icon, color, label, href }: MainLinkProps) {
@@ -85,7 +86,7 @@ const ResponsiveMenuButton = ({ children }: ResponsiveMenuButtonProps) => {
 
   return (
     <Stack pt="md" spacing="sm">
-        <Burger opened={opened} onClick={toggle} color="gray" />
+        <Burger opened={opened} onClick={toggle} color="gray" style={{ height: "2rem"}} />
         <Collapse in={opened} styles={(smallerThanMd ? { content: { padding: 0} } : {})} >  
           {children}
       </Collapse>
