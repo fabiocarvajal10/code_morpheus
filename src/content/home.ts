@@ -53,13 +53,16 @@ export default {
   isAMatch: [
     {
       title: 'Have a specific goal?',
-      desc: 'We do not profit from software professional, we worked together on projects and earn as a team.',
+      desc: 'With our refined process and collaborative approach, we ensure accurate estimates and timelines for your projects. We have already established trust and effective communication among our team members. This allows us to deliver exceptional results and turn your vision into reality.',
     }, {
-      title: 'Escape Overpriced Agency Fees?',
+      title: "Seeking Full Project Ownership or Skilled Contractor Force?",
+      desc: "With our full project ownership expertise, we take complete responsibility for every aspect of your project, from inception to delivery. Alternatively, if you prefer a specialized contractor force, our highly skilled professionals are ready to join your team and provide their expertise on-demand."
+    }, {
+      title: 'Looking to Save Time and Boost Efficiency?',
+      desc: `We specialize in delivering efficient solutions that drive productivity and accelerate success.`,
+    }, {
+      title: 'Want to escape overpriced Agency Fees?',
       desc: `Join Our Team and Experience the Difference: We're Not an Agency, We're a Collaborative Team of Engineers. No Overblown Fees, Just Quality Work.`,
-    }, {
-      title: 'Need a "Tiger Team" for a specific goal',
-      desc: `Assemble Your "Tiger Team" for Targeted Success: Achieve Your Specific Goal with Our Expertise.`,
-    }
+    },
   ]
 }

@@ -11,7 +11,6 @@ import useResponsive from '../hooks/useResponsive';
 import { IconClipboardCopy } from '@tabler/icons-react';
 import { ReactNode, useEffect } from 'react';
 import { useDisclosure } from '@mantine/hooks';
-import Logo from '../assets/img/logo.png';
 import { contactLink } from '../constants';
 
 interface MainLinkProps {

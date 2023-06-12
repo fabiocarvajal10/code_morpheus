@@ -76,23 +76,30 @@ function HomeView() {
             ))}
           </Flex>
         </Stack>
-        <Stack spacing="xl" mx="xl" mb="xl">
-          <PointList
-            title='Why us?'
-            points={Content.whyPoints}
-          />
-          <CentralCTA link="/about">
-            About Us
-          </CentralCTA>
-          <PointList
-            title='Are You a Match?'
-            points={Content.isAMatch}
-          />
-          <CentralCTA link={contactLink}>
-            Reach out
-          </CentralCTA>
-        </Stack>
-        
+        <Grid>
+          <Grid.Col md={6} px="md" mb="xl">
+            <PointList
+              title='Why us?'
+              points={Content.whyPoints}
+            />
+            <div style={{marginTop: 12}}>
+              <CentralCTA link="/about">
+                About Us
+              </CentralCTA>
+            </div>
+          </Grid.Col>
+          <Grid.Col md={6} px="md">
+            <PointList
+              title='Are You a Match?'
+              points={Content.isAMatch}
+            />
+            <div style={{marginTop: 12}}>
+              <CentralCTA link={contactLink}>
+                Reach out
+              </CentralCTA>
+            </div>
+          </Grid.Col>
+        </Grid>
       </Stack>
     </Stack>
   )

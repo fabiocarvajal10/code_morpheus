@@ -17,16 +17,16 @@ function PointList({
   points
 }: PointListProps) {
   return (
-    <Stack spacing={2}>
-      <ResponsiveSectionTitle ta="center" mb="xs" order={3} underline>
+    <Stack spacing="sm">
+      <ResponsiveSectionTitle mb="xs" order={3} underline>
         {title}
       </ResponsiveSectionTitle>
       {points.map(point => (
         <Stack spacing="xs">
-          <ResponsiveSectionTitle ta="center" order={4}>
+          <ResponsiveSectionTitle order={4}>
             {point.title}
           </ResponsiveSectionTitle>
-          <ResponsiveParagraph ta="center">
+          <ResponsiveParagraph>
             {point.desc}
           </ResponsiveParagraph>
         </Stack>

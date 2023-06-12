@@ -1,9 +1,10 @@
 import { Button, Stack, Textarea } from "@mantine/core";
 import { IconBrandWhatsapp } from "@tabler/icons-react";
 import { useState } from "react";
+import { messageFormContact } from "../constants";
 
 const buildURL = (text: string) => {
-  return `https://api.whatsapp.com/send/?phone=50689751261&text=${text}&type=phone_number&app_absent=0`
+  return `${messageFormContact}&text=${text}`
 }
 
 function ContactForm() {
