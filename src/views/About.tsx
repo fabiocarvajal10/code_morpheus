@@ -39,13 +39,13 @@ function AboutView() {
       </Center>
       <Stack bg="#F5F5F5" py="sm">
         <ResponsiveParagraph px="sm">
-          {Content.aboutTxt1}
+          {Content.mainTxt}
         </ResponsiveParagraph>
         <ResponsiveParagraph px="sm">
-          {Content.aboutTxt2}
+          {Content.mainTxt2}
         </ResponsiveParagraph>
         <ResponsiveParagraph px="sm">
-          {Content.aboutTxt3}
+          {Content.mainTxt3}
         </ResponsiveParagraph>
         <Grid gutter={14} align='start'>
           {Content.cultureImgs.map(cultuImg => (
@@ -65,6 +65,9 @@ function AboutView() {
             </Button>
           </Link>
         </Center>
+        <ResponsiveParagraph px="sm">
+          {Content.aboutTxt1}
+        </ResponsiveParagraph>
         <ResponsiveParagraph px="sm">
           {Content.aboutTxt4}
         </ResponsiveParagraph>
