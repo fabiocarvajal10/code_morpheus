@@ -23,9 +23,9 @@ interface MainLinkProps {
 
 const data = [
   { icon: <IconCode size="1rem" />, color: 'violet', label: 'Home', href: '/' },
-  { icon: <IconAlertCircle size="1rem" />, color: 'violet', label: 'About', href: '/about' },
-  { icon: <IconClipboardCopy size="1rem" />, color: 'violet', label: 'Resume', href: '/resume' },
-  { icon: <IconBook size="1rem" />, color: 'violet', label: 'Manifesto', href: '/manifesto' },
+  { icon: <IconAlertCircle size="1rem" />, color: 'violet', label: 'About', href: 'about' },
+  { icon: <IconClipboardCopy size="1rem" />, color: 'violet', label: 'Resume', href: 'resume' },
+  { icon: <IconBook size="1rem" />, color: 'violet', label: 'Manifesto', href: 'manifesto' },
   { icon: <IconTestPipe size="1rem" />, color: 'violet', label: 'Blog', href: 'https://medium.com/@fabio.carvajal' },
   { icon: <IconBrandWhatsapp size="1rem"/>, color: 'violet', label: 'Contact', href: contactLink},
 ];
