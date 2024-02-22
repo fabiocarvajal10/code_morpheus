@@ -35,7 +35,7 @@ function ResumeView() {
               </ResponsiveParagraph>
             </Stack>
             <Group position='center' spacing="lg">
-              <a href='https://www.linkedin.com/in/fabio-c-250055a4' target='_blank'>
+              <a href='https://www.linkedin.com/in/fabio-carvajal-5010412a5' target='_blank'>
                 <IconBrandLinkedin size={28} />
               </a>
               <a href="https://twitter.com/Agent_Carvajal" target="_blank">
@@ -61,17 +61,17 @@ function ResumeView() {
               </Center>
             </Paper>
           </CardSection>
-          <CardSection>      
+          <CardSection>
             <Stack>
               <Paper px="sm" py={0} radius="md" bg="transparent">
                   <ResponsiveSectionTitle px={0} color="dark" order={titleOrder} mb="xs">
                     Career Record
                   </ResponsiveSectionTitle>
-  
+
                 {
                   Content.career.filter(record => Boolean(record.summary)).map((record, i) => (
-                    <PostEntry 
-                      key={record.company} 
+                    <PostEntry
+                      key={record.company}
                       id={record.company}
                       title={record.title}
                       subtitle={record.company}
@@ -108,8 +108,8 @@ function ResumeView() {
                 )}
                 {
                   Content.career.filter(record => !Boolean(record.summary)).map((record, i) => (
-                    <PostEntry 
-                      key={record.company} 
+                    <PostEntry
+                      key={record.company}
                       id={record.company}
                       title={record.title}
                       subtitle={record.company}
