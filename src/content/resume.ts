@@ -1,14 +1,14 @@
 export default {
   name: 'Fabio Carvajal',
-  summary: `Accomplished software engineer with over 9 years of experience, I have honed my skills in React, and Nodejs by working in diverse environments, ranging from real estate to industries such as fintech, document automation, freelancing and web3. Experienced in both corporate and startup environments. Have a proven track record of delivering high-quality software on time and on budget.
-  My expertise lies in creating innovative solutions that drive business success, and I enjoy tackling new challenges while ensuring software is easy to work with. 
+  summary: `Accomplished software engineer with over a decade of experience, I have honed my skills in React, and Nodejs by working in diverse environments, ranging from real estate to industries such as fintech, document automation, freelancing and web3. Experienced in both corporate and startup environments. Have a proven track record of delivering high-quality software on time and on budget.
+  My expertise lies in creating innovative solutions that drive business success, and I enjoy tackling new challenges while ensuring software is easy to work with.
   I possess excellent communication skills and a strong commitment to collaboration, making me a valuable asset to any team. I am eager to make a positive impact on your organization... Let's join forces and achieve great things together!`,
-  title: 'FullStack Web3 React/NodeJS',
+  title: 'Fullstack Serverless React/NodeJS',
   skills: {
     core: [
       {
         label: 'react.js',
-        since: 2018, 
+        since: 2018,
       },
       {
         label: 'node.js',
@@ -103,9 +103,44 @@ export default {
   },
   career: [
     {
-      title: "Senior Javascript Engineer",
+      title: "Senior React Engineer",
+      company: "Fullscript",
+      years: "2023 - ACT.",
+      domain: "Healthcare / E-commerce",
+      accomplishments: [
+        "Contribruted to the development of a versatile platform enabling practitioners to create individual, multi-patient plans, and templates, significantly improving workflow efficiency.",
+        "Engineered a cleaner user experience by maintaining plan context at the forefront, facilitating easier navigation and plan management for practitioners.",
+        "Contributed to refining user experience by simplifying interactions with the Consolidate Workflow Protocols, resulting in a more intuitive and streamlined user interface.",
+        "Worked together with designers and backend engineers on the implementation of the Plan Writing Page, focusing on user-centric design principles and leveraging React and Apollo GraphQL for optimal state management.",
+        "Consistently released projects ahead of schedule, demonstrating exceptional efficiency and improving project delivery with each successive initiative.",
+        "Quality Assurance: Ensured high standards of code quality by integrating comprehensive test coverage for every pull request, reinforcing the reliability and maintainability of the platform.",
+      ],
+      href: "https://fullscript.com",
+      keywords: "react typescript graphql node.js postgres rails mixpanel",
+      summary: "Key contributor at Fullscript 2.0. I've played a pivotal role in enhancing the platform's workflow protocols and user experience. Specializing in React and Apollo GraphQL, I've helped on the development of the Plan Writing Page and Care-Center modules, enabling practitioners to efficiently create and manage patient plans. My commitment to quality and innovation has been instrumental in delivering projects ahead of schedule, continuously improving our development process."
+    },
+    {
+      title: "Senior Backend Engineer",
+      company: "StadiumApp / Clevertech",
+      years: "2023 - 2024",
+      domain: "Streaming / Entertainment",
+      accomplishments: [
+        "Architected serverless solutions with PostgreSQL, enhancing scalability and maintainability through use-case patterns, improving code traceability and extensibility.",
+        "Developed a high-speed real-time feed with AWS Kinesis and NoSQL, optimizing data processing and retrieval.",
+        "Contributed to a sports streaming app with integrated social media features using AWS Serverless, enhancing user engagement.",
+        "Designed a microservices architecture for scalable backend services, ensuring independent development and deployment.",
+        "Implemented high availability and fault tolerance with AWS Lambda and API Gateway, ensuring consistent uptime.",
+        "Led backend synchronization with Bally Sports via AWS EventBridge, streamlining content delivery.",
+        "Integrated real-time chat functionality using PubNub, boosting user interaction.",
+      ],
+      href: "https://apps.apple.com/us/app/stadium/id691285427",
+      keywords: "nodejs typescript serverless aws dynamodb postgres prisma kinesis eventbridge aws-media-services nosql pubnub python",
+      summary: "Engineered scalable serverless backends on AWS, enhancing system scalability and maintainability through innovative use-case patterns and real-time integrations"
+    },
+    {
+      title: "Senior Fullstack Engineer",
       company: "Foraged / Clevertech",
-      years: "2023 - Act.",
+      years: "2023 - June",
       domain: "E-commerce",
       accomplishments: [
       "Created a new entity to support multi-vendor functionality, expanding the platform's capabilities beyond its original single-store design.",
@@ -140,11 +175,10 @@ export default {
       domain: "Web3 - CRM",
       href: "https://www.frens.place",
       accomplishments: [
-        "Built a platform on top of Discord to help community managers to manage their communities, providing an easy way to create events, manage members, and more.",
+        "Built a platform on top of Discord to help community managers with their communities, providing an easy way to create events, manage members, and improve member interaction within the server.",
         "Integrated with Third-Party APIs like Twitter shares, which allowed managers to create shareable posts that users could interact with.",
         "Integrated with Neoswap to allow users to join swapping rooms for trading NFTs.",
-        "Improved the wallet connection by supporting Ethereum, originally Stacks was the only supported blockchain.",
-        "Developed modules on the Frens website to manage third-party integrations and display some analytics from it."
+        "Added Ethereum support to the platform, originally Stacks was the only supported blockchain.",
       ],
       keywords: "react typescript node.js postgres aws docker discord",
       summary: `As a senior FullStack member of a small team at Frensplace, contributed to the development of a platform on top of Discord to help community managers to manage their communities, providing an easy way to create events, manage members, and more.
@@ -164,8 +198,8 @@ export default {
       "Collaborated with backend to develop a reusable API for reporting and analytics.",
       ],
       keywords: "react react-testing-library Go postgres aws Docker",
-      summary: `As a Senior Javascript Engineer at CoreBT / Clevertech, I was brought on to accelerate the development of a payment platform for the US market using React and Go. 
-      By extending the initial MVP and providing structure to the codebase, I was able to use my experience abstracting concepts to create a more maintainable codebase that was easier to extend. 
+      summary: `As a Senior Javascript Engineer at CoreBT / Clevertech, I was brought on to accelerate the development of a payment platform for the US market using React and Go.
+      By extending the initial MVP and providing structure to the codebase, I was able to use my experience abstracting concepts to create a more maintainable codebase that was easier to extend.
       My primary objective was to streamline the front-end workflow, resulting in faster implementation times.`
     },
     {
@@ -199,13 +233,13 @@ export default {
       keywords: "react react-native D3 React-Testing-Library Node.js Elasticsearch GCP/AWS",
       summary: `As a Senior Fullstack Engineer at Keller Williams Realty, I was tasked with accelerating the development of a platform for real estate agents to manage their clients and properties.
       I took ownership of the Listings module, which included map view, virtual tours, and listing management, and grew the team from a solo developer to 7 engineers.
-      After that, I was promoted to lead the Opportunities front-end module, streamlining the real estate transaction process from prospecting to commission splitting. 
+      After that, I was promoted to lead the Opportunities front-end module, streamlining the real estate transaction process from prospecting to commission splitting.
       Overall, my contributions resulted in improved client satisfaction, increased revenue, and higher operational efficiency.`
     },
     {
       title: 'Mid FullStack Engineer',
       company: 'Trifin Labs',
-      domain: "CMS & Data Analytics", 
+      domain: "CMS & Data Analytics",
       href: "https://trifinlabs.com",
       years: '2017 - 2018',
       keywords: "react angularjs D3.js typescript neo4J contentful heroku nosql",
