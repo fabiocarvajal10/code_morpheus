@@ -1,8 +1,6 @@
 export default {
   name: 'Fabio Carvajal',
-  summary: `Accomplished software engineer with over a decade of experience, I have honed my skills in React, and Nodejs by working in diverse environments, ranging from real estate to industries such as fintech, document automation, freelancing and web3. Experienced in both corporate and startup environments. Have a proven track record of delivering high-quality software on time and on budget.
-  My expertise lies in creating innovative solutions that drive business success, and I enjoy tackling new challenges while ensuring software is easy to work with.
-  I possess excellent communication skills and a strong commitment to collaboration, making me a valuable asset to any team. I am eager to make a positive impact on your organization... Let's join forces and achieve great things together!`,
+  summary: `As a Senior Software Engineer,  with over a decade of experience, my approach combines technical mastery in React, Apollo GraphQL, and AWS with a collaborative spirit, making complex serverless solutions accessible and manageable. I've played a key role in enhancing platforms, integrating advanced functionalities, and streamlining workflows, often delivering projects ahead of schedule. My knack for simplifying technical challenges, coupled with a commitment to quality, has led to significant improvements in user experience and operational efficiency. Colleagues appreciate my mentoring and the agile, inclusive environment I promote, which drives innovation and problem-solving. This blend of technical acumen and ease of collaboration has been pivotal in achieving project success and fostering positive team dynamics.`,
   title: 'Fullstack Serverless React/NodeJS',
   skills: {
     core: [
