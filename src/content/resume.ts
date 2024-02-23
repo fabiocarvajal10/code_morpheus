@@ -106,7 +106,7 @@ export default {
       years: "2023 - ACT.",
       domain: "Healthcare / E-commerce",
       accomplishments: [
-        "Contribruted to the development of a versatile platform enabling practitioners to create individual, multi-patient plans, and templates, significantly improving workflow efficiency.",
+        "Contributed to the development of a versatile platform enabling practitioners to create individual, multi-patient plans, and templates, significantly improving workflow efficiency.",
         "Engineered a cleaner user experience by maintaining plan context at the forefront, facilitating easier navigation and plan management for practitioners.",
         "Contributed to refining user experience by simplifying interactions with the Consolidate Workflow Protocols, resulting in a more intuitive and streamlined user interface.",
         "Worked together with designers and backend engineers on the implementation of the Plan Writing Page, focusing on user-centric design principles and leveraging React and Apollo GraphQL for optimal state management.",
